@@ -1,0 +1,109 @@
+@use '../base/variables' as *;
+
+// Google Reviews Section
+.google-reviews {
+  padding: 2rem 0;
+  background: $white;
+  position: relative;
+  clear: both;
+  width: 100%;
+  display: block;
+  isolation: isolate;
+  contain: layout style;
+  
+  // Forcer tous les enfants à rester dans la section
+  > * {
+    position: relative !important;
+  }
+}
+
+.trustindex-widget-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 1rem auto 0;
+  padding: 1rem 0;
+  min-height: 300px;
+  position: relative;
+  z-index: 1;
+  display: block;
+  overflow: visible;
+  contain: layout;
+
+  // Forcer le widget à rester dans le conteneur
+  > * {
+    position: relative !important;
+  }
+
+  // Styles pour le widget Trustindex
+  iframe,
+  > div,
+  .ti-widget,
+  #ti-widget-container-bdd668f624ea6214a4761c20403 {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  // Assure que le widget Trustindex est responsive
+  [class*="trustindex"],
+  [class*="ti-"],
+  [id*="trustindex"],
+  [id*="ti-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+  }
+}
+
+// Forcer le widget à rester dans la section même s'il est déplacé
+#google-reviews-section {
+  #ti-widget-container-bdd668f624ea6214a4761c20403 {
+    position: relative !important;
+  }
+}
+
+// Cacher le widget s'il est créé en dehors de la section
+body > #ti-widget-container-bdd668f624ea6214a4761c20403,
+body > [id*="ti-widget"]:not(#google-reviews-section [id*="ti-widget"]),
+footer #ti-widget-container-bdd668f624ea6214a4761c20403,
+.cta #ti-widget-container-bdd668f624ea6214a4761c20403 {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+// Cacher les boutons "read more" dans les avis
+.google-reviews {
+  [class*="read-more"],
+  [class*="readmore"],
+  [id*="read-more"],
+  [id*="readmore"],
+  .ti-read-more,
+  .ti-readmore,
+  button[class*="read"],
+  a[class*="read"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .google-reviews {
+    padding: 1.5rem 0;
+  }
+
+  .trustindex-widget-container {
+    padding: 1rem 0;
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .google-reviews {
+    padding: 1rem 0;
+  }
+}
+

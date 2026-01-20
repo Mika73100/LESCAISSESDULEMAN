@@ -1,0 +1,11 @@
+// Variables globales - utiliser @use avec as * pour rendre les variables globales
+@use './base/_variables.scss' as *;
+
+// Reset et styles de base
+@use './base/_reset.scss';
+@use './base/_typography.scss';
+
+// Composants
+@use './components/_landing-page.scss';
+@use './components/_google-reviews.scss';
+
