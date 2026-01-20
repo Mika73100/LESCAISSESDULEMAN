@@ -1,23 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { useTrustindex } from '../hooks/useTrustindex'
+import { useMenu } from '../hooks/useMenu'
 
 const LandingPage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  // Charger le script Trustindex
-  useEffect(() => {
-    if (document.getElementById('trustindex-loader') || window.Trustindex) return
-
-    const script = document.createElement('script')
-    script.id = 'trustindex-loader'
-    script.src = 'https://cdn.trustindex.io/loader.js?bdd668f624ea6214a4761c20403'
-    script.async = true
-    script.defer = true
-    document.body.appendChild(script)
-  }, [])
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  useTrustindex()
+  const { isMenuOpen, toggleMenu } = useMenu()
 
   return (
     <div className="landing-page">
@@ -151,6 +138,10 @@ const LandingPage = () => {
       {/* Features Section */}
       <section id="services" className="features">
         <div className="container">
+          {/* Logo */}
+          <div className="services-logo">
+            <img src="/assets/lescaissesdulemanlogo.png" alt="Les Caisses du Léman" className="services-logo-img" />
+          </div>
           {/* Texte d'introduction */}
           <div className="services-intro">
             <p className="services-intro-label">QUAND NOS SOLUTIONS SONT LA BONNE RÉPONSE</p>

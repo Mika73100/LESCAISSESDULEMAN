@@ -463,6 +463,18 @@
 }
 
 // Introduction des services
+.services-logo {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.services-logo-img {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
 .services-intro {
   max-width: 1000px;
   margin: 0 0 4rem 0;
@@ -480,7 +492,7 @@
 
 .services-intro-label {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: $primary-red;
