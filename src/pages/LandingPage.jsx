@@ -25,7 +25,7 @@ const LandingPage = () => {
         <div className="container">
           <div className="nav">
             <div className="logo">
-              <img src="/assets/logo-horizontal.png" alt="Les Caisses du Léman" className="logo-img" />
+              <img src="/assets/imgs/logo-horizontal.png" alt="Les Caisses du Léman" className="logo-img" />
             </div>
             <nav className="nav-links">
               <a href="#accueil" onClick={(e) => { e.preventDefault(); scrollToSection('accueil') }}>Accueil</a>
@@ -152,7 +152,7 @@ const LandingPage = () => {
         <div className="container">
           {/* Logo */}
           <div className="services-logo">
-            <img src="/assets/lescaissesdulemanlogo.png" alt="Les Caisses du Léman" className="services-logo-img" />
+            <img src="/assets/imgs/lescaissesdulemanlogo.png" alt="Les Caisses du Léman" className="services-logo-img" />
           </div>
           {/* Texte d'introduction */}
           <div className="services-intro">
@@ -282,7 +282,7 @@ const LandingPage = () => {
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
-              <img src="/assets/logotypo.png" alt="Les Caisses du Léman" className="footer-logo" />
+              <img src="/assets/imgs/logotypo.png" alt="Les Caisses du Léman" className="footer-logo" />
               <p>Votre partenaire de solutions digitales</p>
             </div>
             <div className="footer-section">
@@ -297,13 +297,13 @@ const LandingPage = () => {
               <h4>Suivez-nous</h4>
               <div className="social-links">
                 <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/linkedin.png" alt="LinkedIn" />
+                  <img src="/assets/icons/linkedin.png" alt="LinkedIn" />
                 </a>
                 <a href="#" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/tiktok-icon.png" alt="TikTok" />
+                  <img src="/assets/icons/tiktok-icon.png" alt="TikTok" />
                 </a>
                 <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/instagram.png" alt="Instagram" />
+                  <img src="/assets/icons/instagram.png" alt="Instagram" />
                 </a>
               </div>
             </div>
