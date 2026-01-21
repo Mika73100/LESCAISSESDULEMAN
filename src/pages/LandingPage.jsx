@@ -113,11 +113,20 @@ const LandingPage = () => {
                   </svg>
                   <span>Équipe IT full stack</span>
                 </div>
+              </div>
+              <div className="promo-panel-row">
                 <div className="promo-panel-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor"/>
                   </svg>
                   <span>Livraisons hebdo</span>
+                </div>
+                <div className="promo-panel-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                  <span>24h Réponse</span>
                 </div>
               </div>
               <div className="promo-panel-row">
@@ -126,13 +135,6 @@ const LandingPage = () => {
                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/>
                   </svg>
                   <span>Tarif journalier dès CHF 180.-</span>
-                </div>
-                <div className="promo-panel-item">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                  <span>24h Réponse</span>
                 </div>
                 <div className="promo-panel-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

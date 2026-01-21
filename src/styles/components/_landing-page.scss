@@ -3,12 +3,16 @@
 .landing-page {
   min-height: 100vh;
   background: $white;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 // Header
@@ -19,12 +23,17 @@
   top: 0;
   z-index: 1000;
   padding: 0.5rem 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -176,7 +185,7 @@
   &::before {
     content: '';
     position: absolute;
-    bottom: -25px;
+    bottom: -28px;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
@@ -187,7 +196,7 @@
     background-position: center;
     border-radius: 50%;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4);
-    z-index: 2;
+    z-index: 1001;
     padding: 0;
     box-sizing: border-box;
   }
@@ -478,6 +487,7 @@
   background: $white;
   position: relative;
   scroll-margin-top: 120px;
+  z-index: 1;
 }
 
 .section-title {
@@ -568,7 +578,7 @@
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   border-top: 4px solid transparent;
   position: relative;
   overflow: hidden;
@@ -582,11 +592,11 @@
     height: 4px;
     background: linear-gradient(to right, $primary-blue, $primary-red);
     transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 85, 164, 0.2);
     border-top-color: $primary-blue;
 
@@ -982,6 +992,10 @@
   .hero-promo-card {
     max-width: 100%;
     margin: 0;
+  }
+
+  .hero::before {
+    bottom: -28px;
   }
 
   .promo-card-content {
