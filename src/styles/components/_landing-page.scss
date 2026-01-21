@@ -32,10 +32,11 @@
   align-items: center;
   padding: 0;
   margin: 0;
+  margin-left: -60px;
 }
 
 .logo-img {
-  height: 90px;
+  height: 60px;
   width: auto;
   max-width: none;
   object-fit: contain;
@@ -895,8 +896,12 @@
     display: flex;
   }
 
+  .logo {
+    margin-left: -10px;
+  }
+
   .logo-img {
-    height: 60px;
+    height: 45px;
   }
 
   .hero {
@@ -999,8 +1004,12 @@
     display: flex;
   }
 
+  .logo {
+    margin-left: -10px;
+  }
+
   .logo-img {
-    height: 50px;
+    height: 40px;
   }
 
   .hero-title {
