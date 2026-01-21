@@ -291,7 +291,7 @@ const LandingPage = () => {
                   <img src="/assets/tiktok-icon.png" alt="TikTok" />
                 </a>
                 <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/Instagram.png" alt="Instagram" />
+                  <img src="/assets/instagram.png" alt="Instagram" />
                 </a>
               </div>
             </div>
