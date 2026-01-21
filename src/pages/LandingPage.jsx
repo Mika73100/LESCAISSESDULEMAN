@@ -170,51 +170,63 @@ const LandingPage = () => {
 
           <div className="features-grid">
             <div className="feature-card">
-              <div className="feature-icon">💻</div>
-              <h3>Développement Web & Mobile</h3>
+              <div className="feature-icon">
+                <img src="/assets/icons/system_computer.png" alt="Site web et mobile" />
+              </div>
+              <h3>Site web et mobile</h3>
               <p>
-                Développement d'applications web et mobiles sur mesure. De la conception à la mise en production, 
-                nous créons des solutions performantes et évolutives pour répondre à vos besoins spécifiques.
+                Création de sites web modernes et d'applications mobiles sur mesure. Nous développons des solutions 
+                performantes, responsives et adaptées à vos besoins, de la conception à la mise en ligne.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">📊</div>
-              <h3>Data & Analytics</h3>
+              <div className="feature-icon">
+                <img src="/assets/icons/campaign_marketing.png" alt="Graphisme et communication" />
+              </div>
+              <h3>Graphisme et communication</h3>
               <p>
-                Exploitation de vos données pour prendre des décisions éclairées. Collecte, traitement, analyse 
-                et visualisation de données pour transformer l'information en valeur ajoutée pour votre entreprise.
+                Services de design graphique et de communication visuelle. Création de logos, chartes graphiques, 
+                supports marketing et identité visuelle pour renforcer votre image de marque.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">🤖</div>
-              <h3>Intelligence Artificielle</h3>
+              <div className="feature-icon">
+                <img src="/assets/icons/tags_price.png" alt="Matériel de publicité digital" />
+              </div>
+              <h3>Matériel de publicité digital</h3>
               <p>
-                Intégration de solutions d'IA pour automatiser vos processus et optimiser vos performances. 
-                Machine Learning, traitement du langage naturel et solutions d'IA sur mesure.
+                Fourniture et installation d'écrans publicitaires digitaux, bornes interactives et solutions d'affichage 
+                dynamique pour votre communication en point de vente et espaces publics.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">🔄</div>
-              <h3>Accompagnement 360°</h3>
+              <div className="feature-icon">
+                <img src="/assets/icons/shopping_shop.png" alt="Matériel et logiciel de caisses" />
+              </div>
+              <h3>Matériel et logiciel de caisses</h3>
               <p>
-                Suivi complet de votre projet de l'idée à la production. Conseil, développement, déploiement 
-                et maintenance pour garantir le succès de vos projets IT.
+                Solutions complètes de caisses enregistreuses, terminaux de paiement et logiciels de gestion de point de vente. 
+                Installation, configuration et formation pour optimiser vos ventes et votre gestion.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">👥</div>
-              <h3>Staffing IT</h3>
+              <div className="feature-icon">
+                <img src="/assets/icons/data.png" alt="SAV et maintenance informatique" />
+              </div>
+              <h3>SAV et maintenance informatique</h3>
               <p>
-                Mise à disposition de profils IT experts pour renforcer vos équipes. Plus de 200 profils IT 
-                staffés avec succès pour accompagner vos projets de développement, data & IA.
+                Service après-vente et maintenance préventive de vos équipements informatiques. Dépannage, réparation, 
+                mises à jour et support technique pour garantir la continuité de vos activités.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">⚡</div>
-              <h3>Solutions Cloud & DevOps</h3>
+              <div className="feature-icon">
+                <img src="/assets/icons/business_building.png" alt="Domotique professionnel" />
+              </div>
+              <h3>Domotique professionnel</h3>
               <p>
-                Infrastructure cloud, CI/CD et automatisation pour accélérer vos déploiements. Optimisation 
-                de vos processus de développement et de déploiement pour une mise en production rapide et fiable.
+                Solutions de domotique et d'automatisation pour entreprises. Gestion centralisée de l'éclairage, 
+                chauffage, sécurité et équipements pour optimiser le confort et réduire les coûts énergétiques.
               </p>
             </div>
           </div>
