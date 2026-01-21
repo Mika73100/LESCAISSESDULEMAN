@@ -19,12 +19,15 @@
 .header {
   background: $white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  padding: 0.5rem 0;
+  padding: 0.35rem 0;
   width: 100%;
   overflow-x: hidden;
+  will-change: transform;
 }
 
 .nav {
@@ -45,7 +48,7 @@
 }
 
 .logo-img {
-  height: 60px;
+  height: 45px;
   width: auto;
   max-width: none;
   object-fit: contain;
@@ -61,14 +64,15 @@
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 
   a {
     text-decoration: none;
     color: $dark-gray;
     font-weight: 700;
+    font-size: 0.9rem;
     transition: all 0.6s ease-in-out;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 8px;
     position: relative;
     opacity: 0.7;
@@ -156,6 +160,7 @@
 // Hero Section
 .hero {
   padding: 2rem 0;
+  padding-top: calc(2rem + 65px);
   background: #f5f5f5;
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
@@ -163,9 +168,9 @@
   background-size: 20px 20px;
   position: relative;
   overflow: visible;
-  scroll-margin-top: 120px;
-  min-height: calc(100vh - 120px);
-  max-height: calc(100vh - 120px);
+  scroll-margin-top: 65px;
+  min-height: calc(100vh - 65px);
+  max-height: calc(100vh - 65px);
   display: flex;
   align-items: center;
 
@@ -965,8 +970,10 @@
 // Responsive Design
 @media (max-width: 768px) {
   .header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
   }
 
@@ -992,6 +999,7 @@
 
   .hero {
     padding: 1.5rem 0;
+    padding-top: calc(1.5rem + 65px);
     min-height: auto;
     max-height: none;
   }
