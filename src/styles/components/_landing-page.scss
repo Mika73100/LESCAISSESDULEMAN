@@ -1004,6 +1004,18 @@
 
   .hero-title {
     font-size: 2rem;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    
+    .hero-title-black {
+      display: block;
+    }
+    
+    .hero-title-red {
+      display: block;
+    }
   }
 
   .hero-buttons {
