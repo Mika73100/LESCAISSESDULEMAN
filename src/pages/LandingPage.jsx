@@ -1,6 +1,6 @@
 import React from 'react'
-import { useTrustindex } from '../hooks/useTrustindex'
-import { useMenu } from '../hooks/useMenu'
+import { useTrustindex } from '../composants/useTrustindex'
+import { useMenu } from '../composants/useMenu'
 
 const LandingPage = () => {
   useTrustindex()
