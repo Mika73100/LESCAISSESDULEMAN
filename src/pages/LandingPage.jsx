@@ -89,7 +89,7 @@ const LandingPage = () => {
           </div>
           <div className="hero-promo-card">
             <div className="promo-card-content">
-              <button className="promo-card-badge">Découvrez Pulse</button>
+              <button className="promo-card-badge">Découvrez nos services</button>
               <h2 className="promo-card-title">PULS▷ 'igital</h2>
               <p className="promo-card-subtitle">Nearshoring sécurisé et agile</p>
               <button className="promo-play-button" aria-label="Play">
