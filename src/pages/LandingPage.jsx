@@ -24,7 +24,7 @@ const LandingPage = () => {
       <header className="header">
         <div className="container">
           <div className="nav">
-            <div className="logo">
+            <div className="logo" onClick={(e) => { e.preventDefault(); scrollToSection('accueil') }} style={{ cursor: 'pointer' }}>
               <img src="/assets/imgs/logo-horizontal.png" alt="Les Caisses du Léman" className="logo-img" />
             </div>
             <nav className="nav-links">
