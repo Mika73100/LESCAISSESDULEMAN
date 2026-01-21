@@ -4,7 +4,19 @@ import { useMenu } from '../composants/useMenu'
 
 const LandingPage = () => {
   useTrustindex()
-  const { isMenuOpen, toggleMenu } = useMenu()
+  const { isMenuOpen, toggleMenu, setIsMenuOpen } = useMenu()
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId)
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
+    setIsMenuOpen(false)
+  }
+
+  const scrollToContact = () => {
+    scrollToSection('contact')
+  }
 
   return (
     <div className="landing-page">
@@ -16,10 +28,10 @@ const LandingPage = () => {
               <img src="/assets/logo-horizontal.png" alt="Les Caisses du Léman" className="logo-img" />
             </div>
             <nav className="nav-links">
-              <a href="#accueil" onClick={() => setIsMenuOpen(false)}>Accueil</a>
-              <a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a>
-              <a href="#apropos" onClick={() => setIsMenuOpen(false)}>À propos</a>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+              <a href="#accueil" onClick={(e) => { e.preventDefault(); scrollToSection('accueil') }}>Accueil</a>
+              <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services') }}>Services</a>
+              <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}>Contact</a>
             </nav>
             <button className="burger-menu" onClick={toggleMenu} aria-label="Menu">
               <span className={isMenuOpen ? 'burger-line open' : 'burger-line'}></span>
@@ -28,10 +40,10 @@ const LandingPage = () => {
             </button>
             {isMenuOpen && (
               <div className="mobile-menu">
-                <a href="#accueil" onClick={() => setIsMenuOpen(false)}>Accueil</a>
-                <a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a>
-                <a href="#apropos" onClick={() => setIsMenuOpen(false)}>À propos</a>
-                <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+                <a href="#accueil" onClick={(e) => { e.preventDefault(); scrollToSection('accueil') }}>Accueil</a>
+                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services') }}>Services</a>
+                <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
+                <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}>Contact</a>
               </div>
             )}
           </div>
@@ -72,7 +84,7 @@ const LandingPage = () => {
             </div>
             <div className="hero-buttons">
               <button className="btn btn-primary">Découvrir nos services</button>
-              <button className="btn btn-secondary">Nous contacter</button>
+              <button className="btn btn-secondary" onClick={scrollToContact}>Nous contacter</button>
             </div>
           </div>
           <div className="hero-promo-card">

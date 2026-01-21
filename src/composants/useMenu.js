@@ -7,7 +7,7 @@ export const useMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  return { isMenuOpen, toggleMenu }
+  return { isMenuOpen, toggleMenu, setIsMenuOpen }
 }
 
 
