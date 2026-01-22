@@ -179,7 +179,7 @@ const LandingPage = () => {
               </defs>
               <text fill="#FFFFFF" font-size="11" font-weight="700" font-family="Arial, sans-serif" text-anchor="middle">
                 <textPath href="#catalogue-circle-path" startOffset="50%">
-                  Telecharger le catalogue
+                  Telecharger         le         catalogue
                 </textPath>
               </text>
             </svg>
@@ -366,10 +366,10 @@ const LandingPage = () => {
                 <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                   <img src="/assets/icons/linkedin.png" alt="LinkedIn" />
                 </a>
-                <a href="#" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.tiktok.com/@lescaissesduleman" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
                   <img src="/assets/icons/tiktok-icon.png" alt="TikTok" />
                 </a>
-                <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/lescaissesduleman" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                   <img src="/assets/icons/instagram.png" alt="Instagram" />
                 </a>
               </div>
