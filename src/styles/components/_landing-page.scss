@@ -282,9 +282,10 @@
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, font-size 0.5s ease-in-out;
   text-decoration: none;
   display: inline-block;
+  line-height: 1.5;
 
   &-primary {
     background: $primary-red;
@@ -294,8 +295,9 @@
     &:hover {
       background: #8a1520;
       border-color: #8a1520;
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.08);
       box-shadow: 0 5px 15px rgba(160, 25, 38, 0.4);
+      font-size: 1.05rem;
     }
   }
 
@@ -315,14 +317,25 @@
         linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
       background-size: 20px 20px;
       border-color: #d0d0d0;
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.08);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      font-size: 1.05rem;
     }
   }
 
   &-large {
     padding: 1.125rem 2.5rem;
     font-size: 1.125rem;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.08);
+      font-size: 1.2rem;
+    }
+  }
+
+  // Spécificité pour btn-primary.btn-large combiné
+  &-primary#{&-large}:hover {
+    font-size: 1.2rem;
   }
 }
 
