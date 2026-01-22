@@ -121,7 +121,7 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="hero-buttons">
-              <button className="btn btn-primary">Découvrir nos services</button>
+              <button className="btn btn-primary" onClick={() => scrollToSection('services')}>Découvrir nos services</button>
               <button className="btn btn-secondary" onClick={scrollToContact}>Nous contacter</button>
             </div>
           </div>
@@ -305,7 +305,7 @@ const LandingPage = () => {
                 En complément de nos services techniques, nous vous accompagnons dans votre <strong>présence digitale</strong> avec la gestion de vos 
                 plateformes sociales (LinkedIn, Instagram) et le <strong>covering automobile</strong> pour valoriser votre <strong>image de marque</strong>.
               </p>
-              <button className="btn btn-primary">En savoir plus</button>
+              <button className="btn btn-primary" onClick={() => scrollToSection('contact')}>En savoir plus</button>
             </div>
             <div className="about-stats">
               <div className="animated-grid">
