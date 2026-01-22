@@ -27,7 +27,7 @@ const LandingPage = () => {
             <div className="logo" onClick={(e) => { e.preventDefault(); scrollToSection('accueil') }} style={{ cursor: 'pointer' }}>
               <img src="/assets/imgs/logo-horizontal.png" alt="Les Caisses du Léman" className="logo-img" />
             </div>
-            <nav className="nav-links">
+            <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
               <a href="#accueil" onClick={(e) => { e.preventDefault(); scrollToSection('accueil') }}>Accueil</a>
               <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services') }}>Services</a>
               <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
