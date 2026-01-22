@@ -169,7 +169,7 @@ const LandingPage = () => {
               <defs>
                 <path id="catalogue-circle-path" d="M 100, 100 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0" />
               </defs>
-              <text fill="#FFFFFF" font-size="11" font-weight="700" font-family="Arial, sans-serif" text-anchor="middle">
+              <text fill="#FFFFFF" fontSize="11" fontWeight="700" fontFamily="Arial, sans-serif" textAnchor="middle">
                 <textPath href="#catalogue-circle-path" startOffset="50%">
                   Telecharger         le         catalogue
                 </textPath>
