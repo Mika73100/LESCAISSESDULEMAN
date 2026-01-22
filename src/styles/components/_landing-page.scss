@@ -187,24 +187,6 @@
     z-index: 1;
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: -28px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 60px;
-    background-image: url('/assets/imgs/logo-icon.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50%;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4);
-    z-index: 999;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
   .container {
     display: grid;
@@ -499,6 +481,134 @@
 .hero-content {
   position: relative;
   z-index: 1;
+}
+
+// Catalogue Button - Design avec badge circulaire et texte autour
+.catalogue-button {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 999;
+  padding: 0;
+
+  &:hover {
+    transform: translateX(-50%) translateY(-5px);
+  }
+
+  &:active {
+    transform: translateX(-50%) translateY(-2px);
+  }
+
+  .catalogue-badge {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $primary-blue 0%, $primary-red 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+      0 10px 30px rgba(0, 85, 164, 0.4),
+      0 5px 15px rgba(220, 20, 60, 0.3),
+      inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $primary-blue, $primary-red);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+      filter: blur(8px);
+    }
+
+    .catalogue-text-curved {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150%;
+      height: 150%;
+      pointer-events: none;
+      z-index: 2;
+      animation: rotateText 20s linear infinite;
+      overflow: visible;
+
+      text {
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        fill: #FFFFFF !important;
+        stroke: rgba(0, 0, 0, 0.3);
+        stroke-width: 0.5px;
+        paint-order: stroke fill;
+      }
+    }
+
+    .catalogue-logo {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 3;
+    }
+  }
+
+  &:hover .catalogue-badge {
+    transform: scale(1.1);
+    box-shadow: 
+      0 15px 40px rgba(0, 85, 164, 0.5),
+      0 8px 20px rgba(220, 20, 60, 0.4),
+      inset 0 2px 4px rgba(255, 255, 255, 0.3);
+
+    &::before {
+      opacity: 0.6;
+    }
+
+    .catalogue-text-curved {
+      animation: rotateText 15s linear infinite;
+    }
+
+    .catalogue-logo {
+      transform: rotate(10deg) scale(1.05);
+    }
+  }
+
+  .catalogue-text-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $primary-red;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+@keyframes rotateText {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
 }
 
 // Features Section
@@ -1069,10 +1179,6 @@
     margin: 0;
   }
 
-  .hero::before {
-    bottom: -28px;
-    z-index: 999;
-  }
 
   .promo-card-content {
     min-height: 280px;

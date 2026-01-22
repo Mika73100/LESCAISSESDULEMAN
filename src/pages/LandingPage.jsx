@@ -147,6 +147,21 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+        <button className="catalogue-button">
+          <div className="catalogue-badge">
+            <svg className="catalogue-text-curved" viewBox="0 0 200 200" width="120" height="120">
+              <defs>
+                <path id="catalogue-circle-path" d="M 100, 100 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0" />
+              </defs>
+              <text fill="#FFFFFF" font-size="11" font-weight="700" font-family="Arial, sans-serif" text-anchor="middle">
+                <textPath href="#catalogue-circle-path" startOffset="50%">
+                  Telecharger le catalogue
+                </textPath>
+              </text>
+            </svg>
+            <img src="/assets/imgs/logo-icon.png" alt="Logo" className="catalogue-logo" />
+          </div>
+        </button>
       </section>
 
       {/* Features Section */}
