@@ -103,21 +103,21 @@ const LandingPage = () => {
               <span className="hero-title-red">qui vous guide</span>
             </h1>
             <p className="hero-description">
-              Développement web, graphisme, caisses enregistreuses et gestion des réseaux sociaux. 
-              Nous vous accompagnons de l'idée à la production avec un suivi complet de votre projet.
+              <strong>Développement web</strong>, <strong>graphisme</strong>, <strong>caisses enregistreuses</strong> et <strong>gestion des réseaux sociaux</strong>. 
+              Nous vous accompagnons de <strong>l'idée à la production</strong> avec un <strong>suivi complet</strong> de votre projet.
             </p>
             <div className="hero-metrics">
               <div className="hero-metric">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="#10B981"/>
                 </svg>
-                <span>+100 caisses enregistreuses livrées</span>
+                <span>+100 <strong>caisses enregistreuses</strong> livrées</span>
               </div>
               <div className="hero-metric">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="#10B981"/>
                 </svg>
-                <span>+200 projets web accompagnés</span>
+                <span>+200 <strong>projets web</strong> accompagnés</span>
               </div>
             </div>
             <div className="hero-buttons">
@@ -129,7 +129,7 @@ const LandingPage = () => {
             <div className="promo-card-content">
               <button className="promo-card-badge">Découvrez nos services</button>
               <h2 className="promo-card-title">PULS▷ 'igital</h2>
-              <p className="promo-card-subtitle">Nearshoring sécurisé et agile</p>
+              <p className="promo-card-subtitle"><strong>Nearshoring</strong> sécurisé et <strong>agile</strong></p>
               <button className="promo-play-button" aria-label="Play">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 5v14l11-7z" fill="currentColor"/>
@@ -143,13 +143,13 @@ const LandingPage = () => {
                     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
                     <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
-                  <span>Démarrage en 48h</span>
+                  <span>Démarrage en <strong>48h</strong></span>
                 </div>
                 <div className="promo-panel-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" fill="none"/>
                   </svg>
-                  <span>Équipe IT full stack</span>
+                  <span><strong>Équipe IT</strong> full stack</span>
                 </div>
               </div>
               <div className="promo-panel-row">
@@ -157,14 +157,14 @@ const LandingPage = () => {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor"/>
                   </svg>
-                  <span>Livraisons hebdo</span>
+                  <span><strong>Livraisons</strong> hebdo</span>
                 </div>
                 <div className="promo-panel-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
                     <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
-                  <span>24h Réponse</span>
+                  <span><strong>24h</strong> Réponse</span>
                 </div>
               </div>
               <div className="promo-panel-row">
@@ -172,7 +172,7 @@ const LandingPage = () => {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/>
                   </svg>
-                  <span>Tarif journalier dès CHF 180.-</span>
+                  <span>Tarif journalier dès <strong>CHF 180.-</strong></span>
                 </div>
                 <div className="promo-panel-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -213,13 +213,13 @@ const LandingPage = () => {
           <div className="services-intro">
             <p className="services-intro-label">QUAND NOS SOLUTIONS SONT LA BONNE RÉPONSE</p>
             <h3 className="services-intro-title">
-              Quand vous voulez des solutions IT qui évoluent vite,
-              avec un accompagnement 360° de l'idée à la production.
+              Quand vous voulez des <strong>solutions IT</strong> qui évoluent vite,
+              avec un <strong>accompagnement 360°</strong> de <strong>l'idée à la production</strong>.
             </h3>
             <p className="services-intro-description">
-              Experts en développement, data & IA, nous vous accompagnons tout au long de votre projet. 
-              De la conception à la mise en production, notre équipe vous guide pour garantir un socle technique 
-              solide et performant.
+              Experts en <strong>développement</strong>, <strong>data & IA</strong>, nous vous accompagnons tout au long de votre projet. 
+              De la <strong>conception à la mise en production</strong>, notre équipe vous guide pour garantir un <strong>socle technique 
+              solide et performant</strong>.
             </p>
           </div>
 
@@ -230,8 +230,8 @@ const LandingPage = () => {
               </div>
               <h3>Site web et mobile</h3>
               <p>
-                Création de sites web modernes et d'applications mobiles sur mesure. Nous développons des solutions 
-                performantes, responsives et adaptées à vos besoins, de la conception à la mise en ligne.
+                Création de <strong>sites web modernes</strong> et d'<strong>applications mobiles</strong> sur mesure. Nous développons des solutions 
+                <strong>performantes</strong>, <strong>responsives</strong> et adaptées à vos besoins, de la <strong>conception à la mise en ligne</strong>.
               </p>
             </div>
             <div className="feature-card">
@@ -240,8 +240,8 @@ const LandingPage = () => {
               </div>
               <h3>Graphisme et communication</h3>
               <p>
-                Services de design graphique et de communication visuelle. Création de logos, chartes graphiques, 
-                supports marketing et identité visuelle pour renforcer votre image de marque.
+                Services de <strong>design graphique</strong> et de <strong>communication visuelle</strong>. Création de <strong>logos</strong>, <strong>chartes graphiques</strong>, 
+                <strong>supports marketing</strong> et <strong>identité visuelle</strong> pour renforcer votre <strong>image de marque</strong>.
               </p>
             </div>
             <div className="feature-card">
@@ -250,8 +250,8 @@ const LandingPage = () => {
               </div>
               <h3>Matériel de publicité digital</h3>
               <p>
-                Fourniture et installation d'écrans publicitaires digitaux, bornes interactives et solutions d'affichage 
-                dynamique pour votre communication en point de vente et espaces publics.
+                Fourniture et installation d'<strong>écrans publicitaires digitaux</strong>, <strong>bornes interactives</strong> et solutions d'<strong>affichage 
+                dynamique</strong> pour votre communication en <strong>point de vente</strong> et <strong>espaces publics</strong>.
               </p>
             </div>
             <div className="feature-card">
@@ -260,8 +260,8 @@ const LandingPage = () => {
               </div>
               <h3>Matériel et logiciel de caisses</h3>
               <p>
-                Solutions complètes de caisses enregistreuses, terminaux de paiement et logiciels de gestion de point de vente. 
-                Installation, configuration et formation pour optimiser vos ventes et votre gestion.
+                Solutions complètes de <strong>caisses enregistreuses</strong>, <strong>terminaux de paiement</strong> et <strong>logiciels de gestion de point de vente</strong>. 
+                <strong>Installation</strong>, <strong>configuration</strong> et <strong>formation</strong> pour optimiser vos <strong>ventes</strong> et votre <strong>gestion</strong>.
               </p>
             </div>
             <div className="feature-card">
@@ -270,8 +270,8 @@ const LandingPage = () => {
               </div>
               <h3>SAV et maintenance informatique</h3>
               <p>
-                Service après-vente et maintenance préventive de vos équipements informatiques. Dépannage, réparation, 
-                mises à jour et support technique pour garantir la continuité de vos activités.
+                <strong>Service après-vente</strong> et <strong>maintenance préventive</strong> de vos équipements informatiques. <strong>Dépannage</strong>, <strong>réparation</strong>, 
+                <strong>mises à jour</strong> et <strong>support technique</strong> pour garantir la <strong>continuité</strong> de vos activités.
               </p>
             </div>
             <div className="feature-card">
@@ -280,8 +280,8 @@ const LandingPage = () => {
               </div>
               <h3>Domotique professionnel</h3>
               <p>
-                Solutions de domotique et d'automatisation pour entreprises. Gestion centralisée de l'éclairage, 
-                chauffage, sécurité et équipements pour optimiser le confort et réduire les coûts énergétiques.
+                Solutions de <strong>domotique</strong> et d'<strong>automatisation</strong> pour entreprises. <strong>Gestion centralisée</strong> de l'éclairage, 
+                chauffage, sécurité et équipements pour optimiser le <strong>confort</strong> et réduire les <strong>coûts énergétiques</strong>.
               </p>
             </div>
           </div>
@@ -297,14 +297,13 @@ const LandingPage = () => {
               <h2 className="section-title">À Propos de Nous</h2>
               <div className="about-divider"></div>
               <p>
-                Experts IT en développement, data & IA, nous accompagnons nos clients de l'idée à la production 
-                avec un accompagnement 360°. Notre équipe d'experts passionnés développe constamment de nouvelles 
-                solutions pour répondre aux besoins changeants dans un monde en évolution rapide.
+                Fondée sur les valeurs du <strong>service client à la suisse</strong>, notre entreprise allie <strong>proximité, organisation et excellence</strong>. 
+                Située au pied des Alpes et enrichie par une solide expérience genevoise, nous proposons des <strong>solutions informatiques 
+                complètes</strong> : <strong>caisses enregistreuses</strong>, <strong>bornes interactives</strong>, <strong>développement de sites web sur mesure</strong> et <strong>création graphique</strong>.
               </p>
               <p>
-                Avec plus de 100 projets livrés et plus de 200 profils IT staffés, nous avons développé une expertise 
-                solide dans le développement, la data et l'intelligence artificielle. Nous nous engageons à fournir 
-                des services de qualité supérieure, alliant innovation technique et accompagnement personnalisé.
+                En complément de nos services techniques, nous vous accompagnons dans votre <strong>présence digitale</strong> avec la gestion de vos 
+                plateformes sociales (LinkedIn, Instagram) et le <strong>covering automobile</strong> pour valoriser votre <strong>image de marque</strong>.
               </p>
               <button className="btn btn-primary">En savoir plus</button>
             </div>
@@ -351,8 +350,8 @@ const LandingPage = () => {
       <section className="cta">
         <div className="container">
           <div className="cta-content">
-            <h2>Prêt à commencer ?</h2>
-            <p>Rejoignez-nous dès aujourd'hui et découvrez comment nous pouvons vous aider</p>
+            <h2>Prêt à <strong>commencer</strong> ?</h2>
+            <p>Rejoignez-nous <strong>dès aujourd'hui</strong> et découvrez comment nous pouvons <strong>vous aider</strong></p>
             <a href={`mailto:${contactInfo.email}`} className="btn btn-primary btn-large">Commencer maintenant</a>
           </div>
         </div>
@@ -364,7 +363,7 @@ const LandingPage = () => {
           <div className="footer-content">
             <div className="footer-section">
               <img src="/assets/imgs/logotypo.png" alt="Les Caisses du Léman" className="footer-logo" />
-              <p>Votre partenaire de solutions digitales</p>
+              <p>Votre <strong>partenaire</strong> de <strong>solutions digitales</strong></p>
             </div>
             <div className="footer-section">
               <h4>Contact</h4>
