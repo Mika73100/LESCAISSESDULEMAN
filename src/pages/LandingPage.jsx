@@ -18,6 +18,15 @@ const LandingPage = () => {
     scrollToSection('contact')
   }
 
+  const downloadCatalogue = () => {
+    const link = document.createElement('a')
+    link.href = '/assets/doc/catalogue-lescaissesduleman.pdf'
+    link.download = 'catalogue-lescaissesduleman.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <div className="landing-page">
       {/* Header */}
@@ -147,7 +156,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <button className="catalogue-button">
+        <button className="catalogue-button" onClick={downloadCatalogue}>
           <div className="catalogue-badge">
             <svg className="catalogue-text-curved" viewBox="0 0 200 200" width="120" height="120">
               <defs>
