@@ -44,11 +44,12 @@
   align-items: center;
   padding: 0;
   margin: 0;
-  margin-left: -60px;
+  margin-left: -50px;
+  padding-left: 15px;
 }
 
 .logo-img {
-  height: 45px;
+  height: 38px;
   width: auto;
   max-width: none;
   object-fit: contain;
@@ -352,10 +353,10 @@
 .promo-card-content {
   background: $primary-red;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.25rem;
   position: relative;
   overflow: hidden;
-  min-height: 280px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -383,9 +384,9 @@
   background: rgba(255, 255, 255, 0.2);
   border: none;
   border-radius: 16px;
-  padding: 0.4rem 0.875rem;
+  padding: 0.35rem 0.75rem;
   color: $white;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -399,26 +400,27 @@
 }
 
 .promo-card-title {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 800;
   color: $white;
-  margin: 0.75rem 0;
+  margin: 0.5rem 0;
   line-height: 1.2;
   z-index: 1;
   position: relative;
 }
 
 .promo-card-subtitle {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: $white;
   opacity: 0.95;
   z-index: 1;
   position: relative;
+  margin-top: 0.25rem;
 }
 
 .promo-play-button {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: $white;
   border: none;
@@ -450,8 +452,8 @@
   background: #f5f5f5;
   background-size: 20px 20px;
   border-radius: 12px;
-  padding: 1rem;
-  margin-top: -1.5rem;
+  padding: 0.75rem;
+  margin-top: -1.25rem;
   position: relative;
   z-index: 3;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -461,7 +463,7 @@
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   padding: 0 0.5rem;
 
   &:last-child {
@@ -473,7 +475,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.4rem;
   text-align: center;
   font-size: 0.7rem;
   color: $dark-gray;
@@ -482,8 +484,8 @@
   min-width: 0;
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     color: $primary-red;
     flex-shrink: 0;
   }
@@ -1395,8 +1397,8 @@
 
 
   .promo-card-content {
-    min-height: 280px;
-    padding: 1.5rem;
+    min-height: 220px;
+    padding: 1.25rem;
   }
 
   .promo-panel-row {
