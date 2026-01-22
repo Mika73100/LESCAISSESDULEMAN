@@ -317,7 +317,7 @@ const LandingPage = () => {
           <div className="cta-content">
             <h2>Prêt à commencer ?</h2>
             <p>Rejoignez-nous dès aujourd'hui et découvrez comment nous pouvons vous aider</p>
-            <button className="btn btn-primary btn-large">Commencer maintenant</button>
+            <a href={`mailto:${contactInfo.email}`} className="btn btn-primary btn-large">Commencer maintenant</a>
           </div>
         </div>
       </section>
