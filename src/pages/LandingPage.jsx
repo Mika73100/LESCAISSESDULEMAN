@@ -358,6 +358,17 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
+
+      {/* WhatsApp CTA Button */}
+      <a 
+        href="https://wa.me/41786623446" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="whatsapp-cta"
+        aria-label="Contactez-nous sur WhatsApp"
+      >
+        <img src="/assets/icons/wattsapp.png" alt="WhatsApp" className="whatsapp-icon" />
+      </a>
     </div>
   )
 }
