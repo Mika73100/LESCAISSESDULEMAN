@@ -5,6 +5,21 @@ import { useMenu } from '../composants/useMenu'
 const LandingPage = () => {
   useTrustindex()
   const { isMenuOpen, toggleMenu, setIsMenuOpen } = useMenu()
+  
+  // Informations de contact
+  const contactInfo = {
+    email: 'contact@lescaissesduleman.ch',
+    phone: {
+      switzerland: '+41 78 662 34 46',
+      france: '+33 6 07 53 56 27'
+    },
+    address: {
+      switzerland: 'Région du Léman, Genève',
+      france: "Route du lac Aix-les-bains"
+    }
+  }
+  
+  const [selectedCountry, setSelectedCountry] = React.useState('switzerland')
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId)
@@ -325,10 +340,24 @@ const LandingPage = () => {
             </div>
             <div className="footer-section">
               <h4>Contact</h4>
+              <div className="country-selector">
+                <button 
+                  className={`country-btn ${selectedCountry === 'switzerland' ? 'active' : ''}`}
+                  onClick={() => setSelectedCountry('switzerland')}
+                >
+                  Suisse
+                </button>
+                <button 
+                  className={`country-btn ${selectedCountry === 'france' ? 'active' : ''}`}
+                  onClick={() => setSelectedCountry('france')}
+                >
+                  France
+                </button>
+              </div>
               <ul>
-                <li>Email: contact@lescaissesduleman.ch</li>
-                <li>Téléphone: +41 XX XXX XX XX</li>
-                <li>Adresse: Région du Léman, Suisse</li>
+                <li>Email: {contactInfo.email}</li>
+                <li>Téléphone: {contactInfo.phone[selectedCountry]}</li>
+                <li>Adresse: {contactInfo.address[selectedCountry]}</li>
               </ul>
             </div>
             <div className="footer-section">
