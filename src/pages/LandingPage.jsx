@@ -1,10 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTrustindex } from '../composants/useTrustindex'
 import { useMenu } from '../composants/useMenu'
 
 const LandingPage = () => {
   useTrustindex()
   const { isMenuOpen, toggleMenu, setIsMenuOpen } = useMenu()
+  const [activeImage, setActiveImage] = useState(0)
+  
+  const images = [
+    { src: '/assets/imgs/caisse.png', alt: 'Caisses enregistreuses', label: 'Caisses' },
+    { src: '/assets/imgs/geneve.png', alt: 'Genève', label: 'Genève' },
+    { src: '/assets/imgs/graphisme.png', alt: 'Graphisme', label: 'Graphisme' },
+    { src: '/assets/imgs/graphisme2.png', alt: 'Graphisme 2', label: 'Graphisme 2' },
+    { src: '/assets/imgs/jetgeneve.png', alt: 'Jet Genève', label: 'Jet Genève' },
+    { src: '/assets/imgs/Aix-les-bains.png', alt: 'Aix-les-Bains', label: 'Aix-les-Bains' },
+    { src: '/assets/imgs/lesalpes.png', alt: 'Les Alpes', label: 'Les Alpes' },
+    { src: '/assets/imgs/chevalet.png', alt: 'Chevalet', label: 'Chevalet' },
+    { src: '/assets/imgs/genevebureau.png', alt: 'Bureau Genève', label: 'Bureau Genève' },
+    { src: '/assets/imgs/sunmi.png', alt: 'Sunmi', label: 'Sunmi' }
+  ]
+
+  const nextImage = () => {
+    setActiveImage((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setActiveImage((prev) => (prev - 1 + images.length) % images.length)
+  }
   
   // Informations de contact
   const contactInfo = {
@@ -271,7 +293,9 @@ const LandingPage = () => {
         <div className="container">
           <div className="about-content">
             <div className="about-text">
+              <div className="about-badge">Notre Histoire</div>
               <h2 className="section-title">À Propos de Nous</h2>
+              <div className="about-divider"></div>
               <p>
                 Experts IT en développement, data & IA, nous accompagnons nos clients de l'idée à la production 
                 avec un accompagnement 360°. Notre équipe d'experts passionnés développe constamment de nouvelles 
@@ -285,17 +309,29 @@ const LandingPage = () => {
               <button className="btn btn-primary">En savoir plus</button>
             </div>
             <div className="about-stats">
-              <div className="stat-item">
-                <div className="stat-number">500+</div>
-                <div className="stat-label">Clients satisfaits</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">10+</div>
-                <div className="stat-label">Années d'expérience</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">24/7</div>
-                <div className="stat-label">Support disponible</div>
+              <div className="animated-grid">
+                <div className="grid-column grid-column-up">
+                  {[...images.filter((_, index) => index % 2 === 0), ...images.filter((_, index) => index % 2 === 0)].map((image, index) => (
+                    <div key={`up-${index}`} className="grid-item">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="grid-item-image" 
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className="grid-column grid-column-down">
+                  {[...images.filter((_, index) => index % 2 === 1), ...images.filter((_, index) => index % 2 === 1)].map((image, index) => (
+                    <div key={`down-${index}`} className="grid-item">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="grid-item-image" 
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
