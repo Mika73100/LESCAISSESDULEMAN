@@ -151,11 +151,11 @@ const LandingPage = () => {
               <video 
                 ref={videoRef}
                 src="/assets/video/LESCAISSESDULEMAN.mp4" 
-                loop 
                 playsInline
                 className="promo-video"
                 onPlay={() => setIsVideoPlaying(true)}
                 onPause={() => setIsVideoPlaying(false)}
+                onEnded={() => setIsVideoPlaying(false)}
                 onClick={togglePlayPause}
               >
                 Votre navigateur ne supporte pas la lecture de vidéos.
