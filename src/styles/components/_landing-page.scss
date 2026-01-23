@@ -1287,10 +1287,6 @@
   text-align: center;
   padding-top: 2rem;
   color: #ccc;
-
-  .footer-line-break {
-    display: inline;
-  }
 }
 
 // Responsive Design
@@ -1689,12 +1685,6 @@
     .whatsapp-icon {
       width: 32px;
       height: 32px;
-    }
-  }
-
-  .footer-bottom {
-    .footer-line-break {
-      display: block;
     }
   }
 }
