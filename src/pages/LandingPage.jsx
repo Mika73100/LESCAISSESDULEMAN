@@ -408,9 +408,9 @@ const LandingPage = () => {
             <div className="footer-section">
               <h4>Contact</h4>
               <ul>
-                <li>Email: {contactInfo.email}</li>
-                <li>Téléphone: {contactInfo.phone}</li>
-                <li>Adresse: {contactInfo.address}</li>
+                <li>{contactInfo.email}</li>
+                <li>{contactInfo.phone}</li>
+                <li>{contactInfo.address}</li>
               </ul>
             </div>
             <div className="footer-section">
