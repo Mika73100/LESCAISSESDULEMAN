@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { useTrustindex } from '../composants/useTrustindex'
 import { useMenu } from '../composants/useMenu'
 
@@ -6,6 +6,8 @@ const LandingPage = () => {
   useTrustindex()
   const { isMenuOpen, toggleMenu, setIsMenuOpen } = useMenu()
   const [activeImage, setActiveImage] = useState(0)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const videoRef = useRef(null)
   
   const images = [
     { src: '/assets/imgs/caisse.png', alt: 'Caisses enregistreuses', label: 'Caisses' },
@@ -54,6 +56,25 @@ const LandingPage = () => {
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+  }
+
+  const playVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.play()
+      setIsVideoPlaying(true)
+    }
+  }
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isVideoPlaying) {
+        videoRef.current.pause()
+        setIsVideoPlaying(false)
+      } else {
+        videoRef.current.play()
+        setIsVideoPlaying(true)
+      }
+    }
   }
 
   return (
@@ -127,13 +148,32 @@ const LandingPage = () => {
           </div>
           <div className="hero-promo-card">
             <div className="promo-card-content">
-              <button className="promo-card-badge">Découvrez nos services</button>
-              <h2 className="promo-card-title">PULS▷ 'igital</h2>
-              <p className="promo-card-subtitle"><strong>Nearshoring</strong> sécurisé et <strong>agile</strong></p>
-              <button className="promo-play-button" aria-label="Play">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 5v14l11-7z" fill="currentColor"/>
-                </svg>
+              <video 
+                ref={videoRef}
+                src="/assets/video/LESCAISSESDULEMAN.mp4" 
+                loop 
+                playsInline
+                className="promo-video"
+                onPlay={() => setIsVideoPlaying(true)}
+                onPause={() => setIsVideoPlaying(false)}
+                onClick={togglePlayPause}
+              >
+                Votre navigateur ne supporte pas la lecture de vidéos.
+              </video>
+              <button 
+                className="promo-play-button" 
+                onClick={togglePlayPause} 
+                aria-label={isVideoPlaying ? "Pause" : "Play"}
+              >
+                {isVideoPlaying ? (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor"/>
+                  </svg>
+                ) : (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5v14l11-7z" fill="currentColor"/>
+                  </svg>
+                )}
               </button>
             </div>
             <div className="promo-card-panel">
