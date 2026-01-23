@@ -429,7 +429,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2026 Les Caisses du Léman. Tous droits réservés.</p>
+            <p>&copy; 2026 Les Caisses du Léman. <span className="footer-line-break">Tous droits réservés.</span></p>
           </div>
         </div>
       </footer>
