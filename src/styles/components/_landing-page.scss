@@ -987,6 +987,32 @@
   position: relative;
   margin-top: 1.6rem; // Réduit de 20% (2rem * 0.8 = 1.6rem)
   margin-bottom: 2rem;
+
+  // Dégradé blanc en haut
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  // Dégradé blanc en bas
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+    z-index: 10;
+    pointer-events: none;
+  }
 }
 
 .animated-grid {
@@ -1445,10 +1471,37 @@
 
   .about-content {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-text {
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      margin-bottom: 0;
+    }
   }
 
   .about-stats {
     grid-template-columns: 1fr;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+
+    // Dégradés adaptés pour mobile
+    &::before,
+    &::after {
+      height: 60px;
+    }
+  }
+
+  .about {
+    padding-bottom: 0.5rem;
+  }
+
+  .google-reviews {
+    padding-top: 0.5rem;
   }
 
   .animated-grid {
@@ -1687,6 +1740,40 @@
 
   .social-links {
     justify-content: center;
+  }
+
+  .about-content {
+    gap: 1rem;
+  }
+
+  .about-text {
+    p {
+      margin-bottom: 0.75rem;
+    }
+
+    .btn {
+      margin-bottom: 0;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .about-stats {
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+
+    // Dégradés adaptés pour petits écrans
+    &::before,
+    &::after {
+      height: 40px;
+    }
+  }
+
+  .about {
+    padding-bottom: 0.25rem;
+  }
+
+  .google-reviews {
+    padding-top: 0.25rem;
   }
 
   .footer-section {

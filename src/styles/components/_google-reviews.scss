@@ -15,6 +15,11 @@
   > * {
     position: relative !important;
   }
+
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .trustindex-widget-container {
@@ -58,6 +63,16 @@
   }
 }
 
+// Ajouter des marges au slider des avis
+.google-reviews {
+  .ti-widget,
+  [class*="ti-widget"],
+  [id*="ti-widget-container"] {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
 // Forcer le widget à rester dans la section même s'il est déplacé
 #google-reviews-section {
   #ti-widget-container-bdd668f624ea6214a4761c20403 {
@@ -92,7 +107,20 @@ footer #ti-widget-container-bdd668f624ea6214a4761c20403,
 // Responsive
 @media (max-width: 768px) {
   .google-reviews {
-    padding: 1.5rem 0;
+    padding: 0.5rem 0 1.5rem 0;
+    padding-top: 0.25rem;
+
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .ti-widget,
+    [class*="ti-widget"],
+    [id*="ti-widget-container"] {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
   }
 
   .trustindex-widget-container {
@@ -103,7 +131,20 @@ footer #ti-widget-container-bdd668f624ea6214a4761c20403,
 
 @media (max-width: 480px) {
   .google-reviews {
-    padding: 1rem 0;
+    padding: 0.25rem 0 1rem 0;
+    padding-top: 0.25rem;
+
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .ti-widget,
+    [class*="ti-widget"],
+    [id*="ti-widget-container"] {
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+    }
   }
 }
 
