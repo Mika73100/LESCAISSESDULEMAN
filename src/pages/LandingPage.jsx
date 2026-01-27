@@ -91,8 +91,7 @@ const LandingPage = () => {
               <a href="#tarifs" onClick={(e) => { e.preventDefault(); scrollToSection('tarifs') }}>Tarifs</a>
               <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
               <a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq') }}>FAQ</a>
-              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}>Contact</a>
-              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="nav-cta-btn">Devis gratuit</a>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="nav-cta-btn">Contact</a>
             </nav>
             <button className="burger-menu" onClick={toggleMenu} aria-label="Menu">
               <span className={isMenuOpen ? 'burger-line open' : 'burger-line'}></span>
@@ -105,8 +104,7 @@ const LandingPage = () => {
                 <a href="#tarifs" onClick={(e) => { e.preventDefault(); scrollToSection('tarifs') }}>Tarifs</a>
                 <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
                 <a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq') }}>FAQ</a>
-                <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}>Contact</a>
-                <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="mobile-cta-btn">Devis gratuit</a>
+                <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="mobile-cta-btn">Contact</a>
               </div>
             )}
           </div>

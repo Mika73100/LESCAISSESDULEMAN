@@ -193,11 +193,13 @@
     border: 2px solid $primary-red;
     box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
     border-bottom: 1px solid #eee;
+    animation: blinkRedNav 2s ease-in-out infinite;
 
     &:hover {
       background: linear-gradient(135deg, #8a1520 0%, $primary-red 100%);
       color: $white !important;
       transform: translateY(-2px);
+      animation: none;
       box-shadow: 0 4px 12px rgba(220, 20, 60, 0.5);
     }
   }
