@@ -128,8 +128,9 @@ const LandingPage = () => {
               <span className="hero-title-red">avec nos solutions digitales</span>
             </h1>
             <p className="hero-description">
-              <strong>Développement web</strong>, <strong>graphisme</strong>, <strong>caisses enregistreuses</strong> et <strong>gestion des réseaux sociaux</strong>. 
-              Nous vous accompagnons de <strong>l'idée à la production</strong> avec un <strong>suivi complet</strong> de votre projet.
+              <strong>Développement web</strong>, <strong>e-commerce</strong>, <strong>graphisme</strong>, <strong>caisses enregistreuses</strong> et <strong>gestion des réseaux sociaux</strong>. 
+              Nous vous accompagnons de <strong>l'idée à la production</strong> avec un <strong>suivi complet</strong> de votre projet. 
+              <strong>Synchronisez votre caisse avec votre site web</strong> pour une <strong>gestion unifiée</strong> de vos ventes en ligne et en magasin.
             </p>
             <div className="hero-metrics">
               <div className="hero-metric">
@@ -274,8 +275,10 @@ const LandingPage = () => {
               </div>
               <h3>Site web et mobile</h3>
               <p>
-                Création de <strong>sites web modernes</strong> et d'<strong>applications mobiles</strong> sur mesure. Nous développons des solutions 
-                <strong>performantes</strong>, <strong>responsives</strong> et adaptées à vos besoins, de la <strong>conception à la mise en ligne</strong>.
+                Création de <strong>sites web modernes</strong>, <strong>e-commerce</strong> et d'<strong>applications mobiles</strong> sur mesure. 
+                Nous développons des solutions <strong>performantes</strong> et <strong>responsives</strong>, adaptées à vos besoins, 
+                de la <strong>conception à la mise en ligne</strong>. <strong>Synchronisez votre caisse avec votre site web</strong> 
+                pour une <strong>gestion unifiée</strong> de vos ventes en ligne et en magasin.
               </p>
             </div>
             <div className="feature-card">
@@ -377,10 +380,12 @@ const LandingPage = () => {
               </div>
               <div className="pricing-content">
                 <p className="pricing-description">
-                  Création de <strong>sites web</strong> et <strong>applications mobiles</strong> sur mesure.
+                  Création de <strong>sites web</strong>, <strong>e-commerce</strong> et <strong>applications mobiles</strong> sur mesure.
                 </p>
                 <ul className="pricing-features">
                   <li>Site web responsive</li>
+                  <li>E-commerce sur mesure</li>
+                  <li>Synchronisation caisse/site web</li>
                   <li>Application mobile</li>
                   <li>Hébergement inclus</li>
                   <li>Maintenance & support</li>
@@ -470,6 +475,14 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Reviews Section */}
+      <section id="google-reviews-section" className="google-reviews">
+      <div className="container">
+        <div className="ti-widget" data-widget-id="bdd668f624ea6214a4761c20403" />
+      </div>
+    </section>
+      <div id="trustindex-loader" src="https://cdn.trustindex.io/loader.js?bdd668f624ea6214a4761c20403"></div>
 
       {/* FAQ Section */}
       <section id="faq" className="faq">
@@ -597,15 +610,6 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Reviews Section */}
-      <section id="google-reviews-section" className="google-reviews">
-      <div className="container">
-        <div className="ti-widget" data-widget-id="bdd668f624ea6214a4761c20403" />
-      </div>
-    </section>
-      <div id="trustindex-loader" src="https://cdn.trustindex.io/loader.js?bdd668f624ea6214a4761c20403"></div>
-
 
       {/* CTA Section */}
       <section className="cta">
