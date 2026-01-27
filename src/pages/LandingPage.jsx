@@ -476,14 +476,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Reviews Section */}
-      <section id="google-reviews-section" className="google-reviews">
-      <div className="container">
-        <div className="ti-widget" data-widget-id="bdd668f624ea6214a4761c20403" />
-      </div>
-    </section>
-      <div id="trustindex-loader" src="https://cdn.trustindex.io/loader.js?bdd668f624ea6214a4761c20403"></div>
-
       {/* FAQ Section */}
       <section id="faq" className="faq">
         <div className="container">
@@ -610,6 +602,14 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Reviews Section */}
+      <section id="google-reviews-section" className="google-reviews">
+      <div className="container">
+        <div className="ti-widget" data-widget-id="bdd668f624ea6214a4761c20403" />
+      </div>
+    </section>
+      <div id="trustindex-loader" src="https://cdn.trustindex.io/loader.js?bdd668f624ea6214a4761c20403"></div>
 
       {/* CTA Section */}
       <section className="cta">
