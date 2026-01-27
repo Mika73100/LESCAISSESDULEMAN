@@ -349,30 +349,6 @@ const LandingPage = () => {
           <div className="pricing-grid">
             <div className="pricing-card">
               <div className="pricing-card-header">
-                <h3>Caisses Enregistreuses</h3>
-                <div className="pricing-icon">
-                  <img src="/assets/icons/shopping_shop.png" alt="Caisses" />
-                </div>
-              </div>
-              <div className="pricing-content">
-                <p className="pricing-description">
-                  Solutions complètes de <strong>caisses enregistreuses</strong> avec installation et formation.
-                </p>
-                <ul className="pricing-features">
-                  <li>Installation sur site</li>
-                  <li>Formation du personnel</li>
-                  <li>Support technique inclus</li>
-                  <li>Maintenance disponible</li>
-                </ul>
-                <div className="pricing-footer">
-                  <p className="pricing-note">À partir de</p>
-                  <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
-                </div>
-              </div>
-            </div>
-            <div className="pricing-card pricing-card-featured">
-              <div className="pricing-badge-featured">Populaire</div>
-              <div className="pricing-card-header">
                 <h3>Développement Web</h3>
                 <div className="pricing-icon">
                   <img src="/assets/icons/system_computer.png" alt="Web" />
@@ -385,13 +361,37 @@ const LandingPage = () => {
                 <ul className="pricing-features">
                   <li>Site web responsive</li>
                   <li>E-commerce sur mesure</li>
-                  <li>Synchronisation caisse/site web</li>
                   <li>Application mobile</li>
                   <li>Hébergement inclus</li>
                   <li>Maintenance & support</li>
                 </ul>
                 <div className="pricing-footer">
-                  <p className="pricing-note">Sur devis personnalisé</p>
+                  <p className="pricing-note">À partir de <strong>1500 CHF</strong></p>
+                  <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
+                </div>
+              </div>
+            </div>
+            <div className="pricing-card pricing-card-featured">
+              <div className="pricing-badge-featured">Populaire</div>
+              <div className="pricing-card-header">
+                <h3>Caisses Enregistreuses</h3>
+                <div className="pricing-icon">
+                  <img src="/assets/icons/shopping_shop.png" alt="Caisses" />
+                </div>
+              </div>
+              <div className="pricing-content">
+                <p className="pricing-description">
+                  Solutions complètes de <strong>caisses enregistreuses</strong> avec installation et formation.
+                </p>
+                <ul className="pricing-features">
+                  <li>Installation sur site</li>
+                  <li>Formation du personnel</li>
+                  <li>Synchronisation caisse/site web</li>
+                  <li>Support technique inclus</li>
+                  <li>Maintenance disponible</li>
+                </ul>
+                <div className="pricing-footer">
+                  <p className="pricing-note">À partir de <strong>2500 CHF</strong></p>
                   <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
                 </div>
               </div>
@@ -414,7 +414,7 @@ const LandingPage = () => {
                   <li>Conseil en communication</li>
                 </ul>
                 <div className="pricing-footer">
-                  <p className="pricing-note">Sur devis personnalisé</p>
+                  <p className="pricing-note">À partir de <strong>250 CHF</strong></p>
                   <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
                 </div>
               </div>

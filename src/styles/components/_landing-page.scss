@@ -98,6 +98,7 @@
     font-weight: 700;
     box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
     border: 2px solid $primary-red;
+    animation: blinkRedNav 2s ease-in-out infinite;
 
     &:hover {
       background: linear-gradient(135deg, #8a1520 0%, $primary-red 100%);
@@ -106,6 +107,7 @@
       transform: translateY(-2px) scale(1.08);
       box-shadow: 0 4px 12px rgba(220, 20, 60, 0.5);
       font-size: 0.95rem;
+      animation: none;
     }
   }
 }
@@ -915,7 +917,7 @@
 
 .pricing-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .pricing-badge {
@@ -945,6 +947,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
+  align-items: start;
 }
 
 .pricing-card {
@@ -955,18 +958,33 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
 
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   }
 
+  // Aligner la première et la troisième carte au même niveau avec la même taille
+  &:nth-child(1),
+  &:nth-child(3) {
+    transform: translateY(0);
+    min-height: 500px;
+    
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+
   &.pricing-card-featured {
     border: 2px solid $primary-red;
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(20px);
+    min-height: 550px;
 
     &:hover {
-      transform: scale(1.08) translateY(-8px);
+      transform: scale(1.08) translateY(12px);
     }
   }
 }
@@ -1051,19 +1069,31 @@
   border-top: 1px solid #eee;
 
   .pricing-note {
-    font-size: 0.9rem;
-    color: $medium-gray;
+    font-size: 1.3rem;
+    color: $primary-blue;
     margin-bottom: 1rem;
+    font-weight: 600;
+
+    strong {
+      font-size: 1.5rem;
+      color: $primary-blue;
+      font-weight: 700;
+    }
   }
 
   .btn {
     width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
   }
 }
 
 .pricing-cta {
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   background: $white;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -1072,6 +1102,40 @@
     font-size: 1.2rem;
     color: $dark-gray;
     margin-bottom: 1rem;
+  }
+
+  .btn {
+    animation: blinkRed 2s ease-in-out infinite;
+  }
+}
+
+@keyframes blinkRed {
+  0%, 100% {
+    background: #f5f5f5;
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border-color: #e0e0e0;
+    color: $dark-gray;
+  }
+  50% {
+    background: $primary-red;
+    background-image: none;
+    border-color: $primary-red;
+    color: $white;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+  }
+}
+
+@keyframes blinkRedNav {
+  0%, 100% {
+    background: linear-gradient(135deg, $primary-red 0%, #8a1520 100%);
+    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
+  }
+  50% {
+    background: linear-gradient(135deg, #ff0000 0%, $primary-red 100%);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.6);
   }
 }
 
