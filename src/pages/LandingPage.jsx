@@ -87,10 +87,10 @@ const LandingPage = () => {
               <img src="/assets/imgs/logo-horizontal.png" alt="Les Caisses du Léman" className="logo-img" />
             </div>
             <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-              <a href="#accueil" onClick={(e) => { e.preventDefault(); scrollToSection('accueil') }}>Accueil</a>
               <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services') }}>Services</a>
               <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
               <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}>Contact</a>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="nav-cta-btn">Devis gratuit</a>
             </nav>
             <button className="burger-menu" onClick={toggleMenu} aria-label="Menu">
               <span className={isMenuOpen ? 'burger-line open' : 'burger-line'}></span>
@@ -99,10 +99,10 @@ const LandingPage = () => {
             </button>
             {isMenuOpen && (
               <div className="mobile-menu">
-                <a href="#accueil" onClick={(e) => { e.preventDefault(); scrollToSection('accueil') }}>Accueil</a>
                 <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services') }}>Services</a>
                 <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
                 <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}>Contact</a>
+                <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="mobile-cta-btn">Devis gratuit</a>
               </div>
             )}
           </div>
