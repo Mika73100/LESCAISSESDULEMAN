@@ -335,6 +335,53 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Technologies & Partners Section */}
+      <section className="technologies">
+        <div className="container">
+          <div className="technologies-header">
+            <p className="technologies-label">TECHNOLOGIES & PARTENAIRES</p>
+            <h3 className="technologies-title">
+              Des <strong>solutions professionnelles</strong> de <strong>qualité</strong>
+            </h3>
+          </div>
+          <div className="technologies-scroll">
+            <div className="technologies-track">
+              <div className="technology-item">
+                <img src="/assets/icons/adobe.png" alt="Adobe" className="technology-logo" />
+              </div>
+              <div className="technology-item">
+                <img src="/assets/icons/atillapos.png" alt="AtillaPOS" className="technology-logo" />
+              </div>
+              <div className="technology-item">
+                <img src="/assets/icons/expo.png" alt="Expo" className="technology-logo" />
+              </div>
+              <div className="technology-item">
+                <img src="/assets/icons/sunmi.png" alt="Sunmi" className="technology-logo" />
+              </div>
+              <div className="technology-item">
+                <img src="/assets/icons/wordpress.png" alt="WordPress" className="technology-logo" />
+              </div>
+              {/* Duplication pour l'effet de boucle infinie */}
+              <div className="technology-item">
+                <img src="/assets/icons/adobe.png" alt="Adobe" className="technology-logo" />
+              </div>
+              <div className="technology-item">
+                <img src="/assets/icons/atillapos.png" alt="AtillaPOS" className="technology-logo" />
+              </div>
+              <div className="technology-item">
+                <img src="/assets/icons/expo.png" alt="Expo" className="technology-logo" />
+              </div>
+              <div className="technology-item">
+                <img src="/assets/icons/sunmi.png" alt="Sunmi" className="technology-logo" />
+              </div>
+              <div className="technology-item">
+                <img src="/assets/icons/wordpress.png" alt="WordPress" className="technology-logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section id="tarifs" className="pricing">
         <div className="container">
