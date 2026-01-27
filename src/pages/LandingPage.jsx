@@ -88,7 +88,9 @@ const LandingPage = () => {
             </div>
             <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
               <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services') }}>Services</a>
+              <a href="#tarifs" onClick={(e) => { e.preventDefault(); scrollToSection('tarifs') }}>Tarifs</a>
               <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
+              <a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq') }}>FAQ</a>
               <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}>Contact</a>
               <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="nav-cta-btn">Devis gratuit</a>
             </nav>
@@ -100,7 +102,9 @@ const LandingPage = () => {
             {isMenuOpen && (
               <div className="mobile-menu">
                 <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services') }}>Services</a>
+                <a href="#tarifs" onClick={(e) => { e.preventDefault(); scrollToSection('tarifs') }}>Tarifs</a>
                 <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
+                <a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq') }}>FAQ</a>
                 <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}>Contact</a>
                 <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="mobile-cta-btn">Devis gratuit</a>
               </div>
@@ -120,8 +124,8 @@ const LandingPage = () => {
               <span>Devis gratuit disponible sous 48h</span>
             </div>
             <h1 className="hero-title">
-              <span className="hero-title-black">L'équipe IT</span>{' '}
-              <span className="hero-title-red">qui vous guide</span>
+              <span className="hero-title-black">Développez votre business</span>{' '}
+              <span className="hero-title-red">avec nos solutions digitales</span>
             </h1>
             <p className="hero-description">
               <strong>Développement web</strong>, <strong>graphisme</strong>, <strong>caisses enregistreuses</strong> et <strong>gestion des réseaux sociaux</strong>. 
@@ -328,6 +332,96 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="tarifs" className="pricing">
+        <div className="container">
+          <div className="pricing-header">
+            <div className="pricing-badge">Nos Tarifs</div>
+            <h2 className="section-title">Tarifs Transparents</h2>
+            <p className="pricing-subtitle">
+              Des <strong>tarifs clairs</strong> et <strong>adaptés</strong> à vos besoins. 
+              Tous nos devis sont <strong>gratuits</strong> et personnalisés selon votre projet.
+            </p>
+          </div>
+          <div className="pricing-grid">
+            <div className="pricing-card">
+              <div className="pricing-card-header">
+                <h3>Caisses Enregistreuses</h3>
+                <div className="pricing-icon">
+                  <img src="/assets/icons/shopping_shop.png" alt="Caisses" />
+                </div>
+              </div>
+              <div className="pricing-content">
+                <p className="pricing-description">
+                  Solutions complètes de <strong>caisses enregistreuses</strong> avec installation et formation.
+                </p>
+                <ul className="pricing-features">
+                  <li>Installation sur site</li>
+                  <li>Formation du personnel</li>
+                  <li>Support technique inclus</li>
+                  <li>Maintenance disponible</li>
+                </ul>
+                <div className="pricing-footer">
+                  <p className="pricing-note">À partir de</p>
+                  <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
+                </div>
+              </div>
+            </div>
+            <div className="pricing-card pricing-card-featured">
+              <div className="pricing-badge-featured">Populaire</div>
+              <div className="pricing-card-header">
+                <h3>Développement Web</h3>
+                <div className="pricing-icon">
+                  <img src="/assets/icons/system_computer.png" alt="Web" />
+                </div>
+              </div>
+              <div className="pricing-content">
+                <p className="pricing-description">
+                  Création de <strong>sites web</strong> et <strong>applications mobiles</strong> sur mesure.
+                </p>
+                <ul className="pricing-features">
+                  <li>Site web responsive</li>
+                  <li>Application mobile</li>
+                  <li>Hébergement inclus</li>
+                  <li>Maintenance & support</li>
+                </ul>
+                <div className="pricing-footer">
+                  <p className="pricing-note">Sur devis personnalisé</p>
+                  <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
+                </div>
+              </div>
+            </div>
+            <div className="pricing-card">
+              <div className="pricing-card-header">
+                <h3>Graphisme & Communication</h3>
+                <div className="pricing-icon">
+                  <img src="/assets/icons/campaign_marketing.png" alt="Graphisme" />
+                </div>
+              </div>
+              <div className="pricing-content">
+                <p className="pricing-description">
+                  Services de <strong>design graphique</strong> et <strong>communication visuelle</strong>.
+                </p>
+                <ul className="pricing-features">
+                  <li>Logo & charte graphique</li>
+                  <li>Supports marketing</li>
+                  <li>Identité visuelle</li>
+                  <li>Conseil en communication</li>
+                </ul>
+                <div className="pricing-footer">
+                  <p className="pricing-note">Sur devis personnalisé</p>
+                  <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="pricing-cta">
+            <p>Besoin d'une <strong>solution sur mesure</strong> ?</p>
+            <button className="btn btn-secondary" onClick={scrollToContact}>Contactez-nous pour un devis gratuit</button>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="apropos" className="about">
         <div className="container">
@@ -373,6 +467,133 @@ const LandingPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="faq">
+        <div className="container">
+          <div className="faq-header">
+            <div className="faq-badge">Questions Fréquentes</div>
+            <h2 className="section-title">FAQ</h2>
+            <p className="faq-subtitle">
+              Trouvez les réponses aux <strong>questions les plus fréquentes</strong> sur nos services.
+            </p>
+          </div>
+          <div className="faq-list">
+            <div className="faq-item">
+              <button className="faq-question" onClick={(e) => {
+                const item = e.currentTarget.parentElement
+                item.classList.toggle('active')
+              }}>
+                <span>Quels sont vos délais de livraison pour une caisse enregistreuse ?</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className="faq-answer">
+                <p>
+                  Les délais varient selon le modèle et la disponibilité. En général, nous livrons et installons 
+                  votre <strong>caisse enregistreuse</strong> sous <strong>7 à 14 jours</strong> après validation du devis. 
+                  Pour les commandes urgentes, nous proposons des solutions express.
+                </p>
+              </div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-question" onClick={(e) => {
+                const item = e.currentTarget.parentElement
+                item.classList.toggle('active')
+              }}>
+                <span>Proposez-vous un service après-vente ?</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className="faq-answer">
+                <p>
+                  Oui, nous proposons un <strong>service après-vente complet</strong> incluant dépannage, réparation, 
+                  maintenance préventive et support technique. Nous sommes disponibles pour vous accompagner 
+                  tout au long de la vie de vos équipements.
+                </p>
+              </div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-question" onClick={(e) => {
+                const item = e.currentTarget.parentElement
+                item.classList.toggle('active')
+              }}>
+                <span>Combien coûte la création d'un site web ?</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className="faq-answer">
+                <p>
+                  Le prix d'un <strong>site web</strong> dépend de vos besoins spécifiques : nombre de pages, 
+                  fonctionnalités, design personnalisé, etc. Nous proposons des <strong>devis gratuits</strong> 
+                  et personnalisés sous 48h. Contactez-nous pour discuter de votre projet.
+                </p>
+              </div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-question" onClick={(e) => {
+                const item = e.currentTarget.parentElement
+                item.classList.toggle('active')
+              }}>
+                <span>Intervenez-vous dans toute la Suisse ?</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className="faq-answer">
+                <p>
+                  Nous intervenons principalement dans la <strong>région du Léman</strong> (Genève, Vaud, Haute-Savoie) 
+                  pour les installations sur site. Pour les services de <strong>développement web</strong> et 
+                  <strong>graphisme</strong>, nous travaillons avec des clients dans toute la Suisse et à l'international.
+                </p>
+              </div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-question" onClick={(e) => {
+                const item = e.currentTarget.parentElement
+                item.classList.toggle('active')
+              }}>
+                <span>Proposez-vous des formations pour utiliser les équipements ?</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className="faq-answer">
+                <p>
+                  Oui, nous proposons des <strong>formations personnalisées</strong> pour votre équipe lors de 
+                  l'installation de vos équipements. Nous vous formons à l'utilisation optimale de vos 
+                  <strong>caisses enregistreuses</strong> et logiciels pour garantir une prise en main rapide.
+                </p>
+              </div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-question" onClick={(e) => {
+                const item = e.currentTarget.parentElement
+                item.classList.toggle('active')
+              }}>
+                <span>Comment obtenir un devis gratuit ?</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className="faq-answer">
+                <p>
+                  Pour obtenir un <strong>devis gratuit</strong>, contactez-nous par email, téléphone ou via notre 
+                  formulaire de contact. Nous vous répondons sous <strong>48h</strong> avec un devis détaillé 
+                  adapté à vos besoins. Vous pouvez également nous contacter directement via WhatsApp.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="faq-cta">
+            <p>Vous avez d'autres questions ?</p>
+            <button className="btn btn-primary" onClick={scrollToContact}>Contactez-nous</button>
           </div>
         </div>
       </section>
