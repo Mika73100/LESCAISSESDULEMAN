@@ -411,7 +411,7 @@ const LandingPage = () => {
                   <li>Maintenance & support</li>
                 </ul>
                 <div className="pricing-footer">
-                  <p className="pricing-note">À partir de <strong>1500 CHF</strong></p>
+                  <p className="pricing-note">À partir de <strong>120CHF par mois</strong></p>
                   <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
                 </div>
               </div>
@@ -436,7 +436,7 @@ const LandingPage = () => {
                   <li>Maintenance disponible</li>
                 </ul>
                 <div className="pricing-footer">
-                  <p className="pricing-note">À partir de <strong>2500 CHF</strong></p>
+                  <p className="pricing-note">À partir de <strong>250CHF par mois</strong></p>
                   <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
                 </div>
               </div>
@@ -459,7 +459,7 @@ const LandingPage = () => {
                   <li>Conseil en communication</li>
                 </ul>
                 <div className="pricing-footer">
-                  <p className="pricing-note">À partir de <strong>250 CHF</strong></p>
+                  <p className="pricing-note">À partir de <strong>80CHF par mois</strong></p>
                   <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
                 </div>
               </div>

@@ -280,10 +280,7 @@
   margin-bottom: 1rem;
 
   &-black {
-    background: linear-gradient(135deg, $primary-blue 0%, $primary-red 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: $primary-blue;
   }
 
   &-red {
@@ -1029,7 +1026,7 @@
 
 .pricing-header {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .pricing-badge {
@@ -1042,7 +1039,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   box-shadow: 0 4px 12px rgba(35, 63, 147, 0.3);
 }
 
@@ -1051,6 +1048,7 @@
   color: $medium-gray;
   max-width: 700px;
   margin: 0 auto;
+  margin-top: 1.5rem;
   line-height: 1.6;
 }
 
@@ -1192,6 +1190,7 @@
     color: $primary-blue;
     margin-bottom: 1rem;
     font-weight: 600;
+    white-space: nowrap;
 
     strong {
       font-size: 1.5rem;
