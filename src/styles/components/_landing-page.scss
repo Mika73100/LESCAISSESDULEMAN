@@ -2195,27 +2195,49 @@
     font-size: 1.5rem;
   }
 
+  .pricing .container {
+    padding: 0 1rem;
+  }
+
   .pricing-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 0 1rem;
+    padding: 0;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
+    justify-items: stretch;
   }
 
   .pricing-card {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    padding: 1.5rem;
+    padding: 1.25rem;
+    margin: 0;
+    overflow: visible;
+
+    * {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
 
     &.pricing-card-featured {
       transform: scale(1);
+      padding: 1.25rem;
+      overflow: visible;
       
       &:hover {
         transform: translateY(-8px);
       }
     }
+  }
+
+  .pricing-badge-featured {
+    top: -10px;
+    right: 10px;
+    font-size: 0.65rem;
+    padding: 0.35rem 0.85rem;
   }
 
   .pricing-note {
@@ -2224,7 +2246,7 @@
     justify-content: center;
     gap: 0.5rem;
     flex-wrap: nowrap;
-    white-space: nowrap;
+    white-space: nowrap !important;
     font-size: 1.1rem;
     line-height: 1.2;
 
@@ -2515,10 +2537,28 @@
   }
 
   .pricing-card {
-    padding: 1.5rem;
+    padding: 1rem;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    margin: 0;
+    overflow: visible;
+
+    * {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    &.pricing-card-featured {
+      overflow: visible;
+    }
+  }
+
+  .pricing-badge-featured {
+    top: -8px;
+    right: 8px;
+    font-size: 0.6rem;
+    padding: 0.3rem 0.75rem;
   }
 
   .pricing-card-header h3 {
@@ -2531,7 +2571,7 @@
     justify-content: center;
     gap: 0.5rem;
     flex-wrap: nowrap;
-    white-space: nowrap;
+    white-space: nowrap !important;
     font-size: 1rem;
     line-height: 1.2;
 
