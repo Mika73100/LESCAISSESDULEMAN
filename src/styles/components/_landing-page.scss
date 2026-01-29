@@ -291,8 +291,13 @@
 .hero-description {
   font-size: 1rem;
   margin-bottom: 1.25rem;
-  color: $medium-gray;
+  color: $dark-gray;
   line-height: 1.5;
+
+  strong {
+    color: $dark-gray;
+    font-weight: 700;
+  }
 }
 
 .hero-metrics {
@@ -787,10 +792,15 @@
 
 .services-intro-description {
   font-size: 1rem;
-  color: $medium-gray;
+  color: $dark-gray;
   line-height: 1.5;
   margin: 0;
   font-weight: 400;
+
+  strong {
+    color: $dark-gray;
+    font-weight: 700;
+  }
 }
 
 .features-grid {
@@ -1045,11 +1055,16 @@
 
 .pricing-subtitle {
   font-size: 1.1rem;
-  color: $medium-gray;
+  color: $dark-gray;
   max-width: 700px;
   margin: 0 auto;
   margin-top: 1.5rem;
   line-height: 1.6;
+
+  strong {
+    color: $dark-gray;
+    font-weight: 700;
+  }
 }
 
 .pricing-grid {
@@ -1230,8 +1245,13 @@
 
   p {
     font-size: 1.1rem;
-    color: $medium-gray;
+    color: $dark-gray;
     margin: 0;
+
+    strong {
+      color: $dark-gray;
+      font-weight: 700;
+    }
   }
 }
 
@@ -1366,10 +1386,15 @@
 
 .faq-subtitle {
   font-size: 1.1rem;
-  color: $medium-gray;
+  color: $dark-gray;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
+
+  strong {
+    color: $dark-gray;
+    font-weight: 700;
+  }
 }
 
 .faq-list {
@@ -1558,9 +1583,14 @@
 
   p {
     margin-bottom: 1.25rem;
-    color: $medium-gray;
+    color: $dark-gray;
     font-size: 1.1rem;
     line-height: 1.8;
+
+    strong {
+      color: $dark-gray;
+      font-weight: 700;
+    }
   }
 }
 

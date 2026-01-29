@@ -260,8 +260,7 @@ const LandingPage = () => {
               avec un <strong>accompagnement 360°</strong> de <strong>l'idée à la production</strong>.
             </h3>
             <p className="services-intro-description">
-              Experts en <strong>développement web</strong>, <strong>e-commerce</strong>, <strong>graphisme</strong>, <strong>caisses enregistreuses</strong> et <strong>gestion des réseaux sociaux</strong>, nous vous accompagnons tout au long de votre projet. 
-              <strong>Booster vos ventes grâce au e-commerce</strong> et à nos solutions synchronisées. De la <strong>conception à la mise en production</strong>, notre équipe vous guide pour garantir des <strong>solutions digitales complètes</strong> et une <strong>gestion unifiée</strong> de votre activité en ligne et en magasin.
+              Experts en <strong>développement, data & IA</strong>, nous vous accompagnons tout au long de votre projet. De la <strong>conception</strong> à la <strong>mise en production</strong>, notre équipe vous guide pour garantir un <strong>socle technique solide et performant</strong>.
             </p>
           </div>
 
