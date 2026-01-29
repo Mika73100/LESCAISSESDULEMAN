@@ -465,9 +465,187 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className="pricing-cta">
+          <div className="services-grid-section">
+            <div className="services-grid-header">
+              <h3>Nos Services Complets</h3>
+              <p>Découvrez tous nos services pour développer votre business</p>
+            </div>
+            <div className="services-grid-cards">
+              <div className="service-card hide-desktop">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="9" y1="13" x2="15" y2="13"/>
+                    <line x1="9" y1="17" x2="13" y2="17"/>
+                  </svg>
+                </div>
+                <h4>Catalogues</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/>
+                  </svg>
+                </div>
+                <h4>Affiches</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="8" y1="13" x2="16" y2="13"/>
+                  </svg>
+                </div>
+                <h4>Flyers</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M9 9h6v6H9z"/>
+                    <circle cx="8" cy="8" r="1"/>
+                    <circle cx="16" cy="8" r="1"/>
+                    <circle cx="8" cy="16" r="1"/>
+                    <circle cx="16" cy="16" r="1"/>
+                  </svg>
+                </div>
+                <h4>Logo</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                </div>
+                <h4>Site Web</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="9" cy="21" r="1"/>
+                    <circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                  </svg>
+                </div>
+                <h4>E-commerce</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                  </svg>
+                </div>
+                <h4>Application Mobile</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" rx="2"/>
+                    <rect x="5" y="5" width="4" height="4" fill="currentColor"/>
+                    <rect x="15" y="5" width="4" height="4" fill="currentColor"/>
+                    <rect x="5" y="15" width="4" height="4" fill="currentColor"/>
+                    <rect x="11" y="11" width="2" height="2" fill="currentColor"/>
+                    <rect x="14" y="11" width="1" height="1" fill="currentColor"/>
+                    <rect x="11" y="14" width="1" height="1" fill="currentColor"/>
+                    <rect x="13" y="14" width="2" height="2" fill="currentColor"/>
+                    <rect x="16" y="13" width="1" height="1" fill="currentColor"/>
+                    <rect x="18" y="13" width="1" height="1" fill="currentColor"/>
+                    <rect x="16" y="16" width="2" height="1" fill="currentColor"/>
+                    <rect x="19" y="16" width="1" height="1" fill="currentColor"/>
+                  </svg>
+                </div>
+                <h4>Commande par QR Code</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                  </svg>
+                </div>
+                <h4>Borne de Commande</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                    <line x1="1" y1="10" x2="23" y2="10"/>
+                  </svg>
+                </div>
+                <h4>Cashless</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="23 4 23 10 17 10"/>
+                    <polyline points="1 20 1 14 7 14"/>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                  </svg>
+                </div>
+                <h4>Synchronisation Caisse & Web</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </div>
+                <h4>Gestion de Stock</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                  </svg>
+                </div>
+                <h4>Reporting</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                    <line x1="1" y1="10" x2="23" y2="10"/>
+                  </svg>
+                </div>
+                <h4>TPE Ingenico</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    <rect x="7" y="6" width="10" height="8" rx="1"/>
+                  </svg>
+                </div>
+                <h4>PAD</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                  </svg>
+                </div>
+                <h4>Stop Trottoir</h4>
+              </div>
+            </div>
+            <div className="services-grid-cta">
             <p>Besoin d'une <strong>solution sur mesure</strong> ?</p>
             <button className="btn btn-secondary" onClick={scrollToContact}>Contactez-nous pour un devis gratuit</button>
+            </div>
           </div>
         </div>
       </section>
