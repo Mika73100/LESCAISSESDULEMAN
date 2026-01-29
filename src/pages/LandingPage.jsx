@@ -758,9 +758,10 @@ const LandingPage = () => {
               </button>
               <div className="faq-answer">
                 <p>
-                  Le prix d'un <strong>site web</strong> dépend de vos besoins spécifiques : nombre de pages, 
-                  fonctionnalités, design personnalisé, etc. Nous proposons des <strong>devis gratuits</strong> 
-                  et personnalisés sous 48h. Contactez-nous pour discuter de votre projet.
+                  Nous développons également des <strong>sites e-commerce</strong> qui peuvent être 
+                  <strong> synchronisés avec le stock magasin</strong> et <strong>reliés à la caisse enregistreuse</strong>. 
+                  Cette solution vous permet de gérer votre inventaire en temps réel, que vos ventes soient effectuées 
+                  en ligne ou en magasin, pour une <strong>gestion unifiée</strong> de votre activité commerciale.
                 </p>
               </div>
             </div>
@@ -776,9 +777,9 @@ const LandingPage = () => {
               </button>
               <div className="faq-answer">
                 <p>
-                  Nous intervenons principalement dans la <strong>région du Léman</strong> (Genève, Vaud, Haute-Savoie) 
+                  Nous intervenons principalement dans la <strong>région du Léman</strong> (Genève, Haute-Savoie, Savoie) 
                   pour les installations sur site. Pour les services de <strong>développement web</strong> et 
-                  <strong>graphisme</strong>, nous travaillons avec des clients dans toute la Suisse et à l'international.
+                  <strong>graphisme</strong>, nous travaillons avec des clients dans toute la Suisse et France.
                 </p>
               </div>
             </div>
@@ -796,7 +797,7 @@ const LandingPage = () => {
                 <p>
                   Oui, nous proposons des <strong>formations personnalisées</strong> pour votre équipe lors de 
                   l'installation de vos équipements. Nous vous formons à l'utilisation optimale de vos 
-                  <strong>caisses enregistreuses</strong> et logiciels pour garantir une prise en main rapide.
+                  <strong> caisses enregistreuses</strong> et logiciels pour garantir une prise en main rapide.
                 </p>
               </div>
             </div>
