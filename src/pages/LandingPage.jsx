@@ -270,13 +270,13 @@ const LandingPage = () => {
           <div className="services-intro">
             <p className="services-intro-label">QUAND NOS SOLUTIONS SONT LA BONNE RÉPONSE</p>
             <h3 className="services-intro-title">
-              Quand vous voulez des <strong>solutions IT</strong> qui évoluent vite,
+              Quand vous voulez des <strong>solutions digitales</strong> qui évoluent vite,
               avec un <strong>accompagnement 360°</strong> de <strong>l'idée à la production</strong>.
             </h3>
             <p className="services-intro-description">
-              Experts en <strong>développement</strong>, <strong>data & IA</strong>, nous vous accompagnons tout au long de votre projet. 
-              De la <strong>conception à la mise en production</strong>, notre équipe vous guide pour garantir un <strong>socle technique 
-              solide et performant</strong>.
+              Experts en <strong>solutions digitales</strong>, <strong>développement web</strong>, <strong>graphisme</strong> et <strong>équipements de point de vente</strong>, nous vous accompagnons tout au long de votre projet. 
+              De la <strong>conception à la mise en production</strong>, notre équipe vous guide pour garantir des <strong>solutions solides et performantes</strong>. 
+              Nous proposons la <strong>synchronisation entre votre caisse</strong>, <strong>votre site web</strong> et <strong>votre gestion des stocks</strong> pour une <strong>gestion unifiée</strong> de votre activité.
             </p>
           </div>
 
