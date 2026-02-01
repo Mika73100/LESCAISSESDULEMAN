@@ -22,6 +22,19 @@ const LandingPage = () => {
     { src: '/assets/imgs/sunmi.png', alt: 'Sunmi', label: 'Sunmi' }
   ]
 
+  const sunmiImages = [
+    '/assets/imgs/sunmi/borne.png',
+    '/assets/imgs/sunmi/pad.png',
+    '/assets/imgs/sunmi/sunmi_imp.png',
+    '/assets/imgs/sunmi/sunmi_v3.png',
+    '/assets/imgs/sunmi/sunmi.png',
+    '/assets/imgs/sunmi/sunmi1.png',
+    '/assets/imgs/sunmi/sunmi2.png',
+    '/assets/imgs/sunmi/sunmi3.png',
+    '/assets/imgs/sunmi/tpe.png',
+    '/assets/imgs/sunmi/tpe2.png'
+  ]
+
   const nextImage = () => {
     setActiveImage((prev) => (prev + 1) % images.length)
   }
@@ -76,6 +89,7 @@ const LandingPage = () => {
       }
     }
   }
+
 
   return (
     <div className="landing-page">
@@ -375,6 +389,30 @@ const LandingPage = () => {
               <div className="technology-item">
                 <img src="/assets/icons/wordpress.png" alt="WordPress" className="technology-logo" />
               </div>
+            </div>
+          </div>
+          
+          {/* Galerie d'images Sunmi */}
+          <div className="sunmi-gallery-section">
+            <div className="sunmi-gallery-header">
+              <h3 className="sunmi-gallery-title">Nos <strong>produits Sunmi</strong></h3>
+              <p className="sunmi-gallery-subtitle">Découvrez notre gamme complète de <strong>caisses enregistreuses</strong> et <strong>terminaux</strong> Sunmi</p>
+            </div>
+            <div className="sunmi-gallery-grid">
+              {sunmiImages.map((image, index) => (
+                <div 
+                  key={index}
+                  className="sunmi-gallery-item"
+                >
+                  <div className="sunmi-gallery-image-wrapper">
+                    <img 
+                      src={image} 
+                      alt={`Produit Sunmi ${index + 1}`}
+                      className="sunmi-gallery-image"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
