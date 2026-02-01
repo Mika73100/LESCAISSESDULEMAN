@@ -260,7 +260,9 @@ const LandingPage = () => {
               avec un <strong>accompagnement 360°</strong> de <strong>l'idée à la production</strong>.
             </h3>
             <p className="services-intro-description">
-              Experts en <strong>développement, data & IA</strong>, nous vous accompagnons tout au long de votre projet. De la <strong>conception</strong> à la <strong>mise en production</strong>, notre équipe vous guide pour garantir un <strong>socle technique solide et performant</strong>.
+              Experts en <strong>développement</strong>, <strong>data & IA</strong>, nous vous accompagnons tout au long de votre projet. 
+              De la <strong>conception à la mise en production</strong>, notre équipe vous guide pour garantir un <strong>socle technique 
+              solide et performant</strong>.
             </p>
           </div>
 
