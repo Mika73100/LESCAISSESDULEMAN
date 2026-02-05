@@ -1532,6 +1532,61 @@
   }
 }
 
+// Bande défilante Aix > Genève
+.scrolling-band {
+  padding: 1.5rem 0;
+  background: linear-gradient(135deg, $primary-blue 0%, $primary-red 100%);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.scrolling-band-track {
+  display: flex;
+  width: fit-content;
+  animation: scrollBandReverse 30s linear infinite;
+  will-change: transform;
+}
+
+.scrolling-band-content {
+  display: flex;
+  gap: 4rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  
+  span {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .scrolling-arrow {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: brightness(0) invert(1);
+  }
+}
+
+@keyframes scrollBandReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 // FAQ Section
 .faq {
   padding: 5rem 0 0.25rem 0;
