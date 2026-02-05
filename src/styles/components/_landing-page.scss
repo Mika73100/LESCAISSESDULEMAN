@@ -854,6 +854,114 @@
   }
 }
 
+// Carte avec image de fond
+.feature-card-with-bg {
+  background-image: url('/assets/imgs/cards/caisse.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: none;
+  border-top: none;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    display: none;
+  }
+
+  &:hover {
+    transform: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top-color: transparent;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .feature-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+  }
+
+  .feature-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    box-sizing: border-box;
+
+    h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: $white;
+      font-weight: 800;
+      line-height: 1.3;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      color: $white;
+      line-height: 1.7;
+      font-size: 1rem;
+      margin: 0;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      
+      strong {
+        color: $white;
+        font-weight: 700;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+}
+
+// Carte Site web et mobile avec image de fond
+.feature-card-web {
+  background-image: url('/assets/imgs/cards/mobile.png');
+}
+
+// Carte SAV avec image de fond
+.feature-card-sav {
+  background-image: url('/assets/imgs/cards/savinformatique.png');
+}
+
+// Carte Graphisme avec image de fond
+.feature-card-graphisme {
+  background-image: url('/assets/imgs/cards/graphisme.png');
+}
+
+// Carte Matériel et logiciel de caisses avec image de fond
+.feature-card-materiel {
+  background-image: url('/assets/imgs/cards/materieldecaisses.png');
+}
+
+// Carte Domotique professionnel avec image de fond
+.feature-card-domotique {
+  background-image: url('/assets/imgs/cards/garage.png');
+}
+
+// Carte Matériel de publicité digital avec image de fond
+.feature-card-pub {
+  background-image: url('/assets/imgs/cards/pub.png');
+}
+
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -2272,6 +2380,24 @@
 
   .features-grid {
     grid-template-columns: 1fr;
+  }
+
+  .feature-card-with-bg {
+    min-height: 350px;
+
+    .feature-card-content {
+      padding: 1.5rem 2rem;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
   }
 
   .technologies {

@@ -281,67 +281,67 @@ const LandingPage = () => {
           </div>
 
           <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">
-                <img src="/assets/icons/system_computer.png" alt="Site web et mobile" />
+            <div className="feature-card feature-card-with-bg feature-card-web">
+              <div className="feature-card-overlay"></div>
+              <div className="feature-card-content">
+                <h3>Site web et mobile</h3>
+                <p>
+                  Création de <strong>sites web modernes</strong>, <strong>e-commerce</strong> et d'<strong>applications mobiles</strong> sur mesure. 
+                  Nous développons des solutions <strong>performantes</strong> et <strong>responsives</strong>, adaptées à vos besoins, 
+                  de la <strong>conception à la mise en ligne</strong>. <strong>Synchronisez votre caisse avec votre site web</strong> 
+                  pour une <strong>gestion unifiée</strong> de vos ventes en ligne et en magasin.
+                </p>
               </div>
-              <h3>Site web et mobile</h3>
-              <p>
-                Création de <strong>sites web modernes</strong>, <strong>e-commerce</strong> et d'<strong>applications mobiles</strong> sur mesure. 
-                Nous développons des solutions <strong>performantes</strong> et <strong>responsives</strong>, adaptées à vos besoins, 
-                de la <strong>conception à la mise en ligne</strong>. <strong>Synchronisez votre caisse avec votre site web</strong> 
-                pour une <strong>gestion unifiée</strong> de vos ventes en ligne et en magasin.
-              </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <img src="/assets/icons/campaign_marketing.png" alt="Graphisme et communication" />
+            <div className="feature-card feature-card-with-bg feature-card-graphisme">
+              <div className="feature-card-overlay"></div>
+              <div className="feature-card-content">
+                <h3>Graphisme et communication</h3>
+                <p>
+                  Services de <strong>design graphique</strong> et de <strong>communication visuelle</strong>. Création de <strong>logos</strong>, <strong>chartes graphiques</strong>, 
+                  <strong>supports marketing</strong> et <strong>identité visuelle</strong> pour renforcer votre <strong>image de marque</strong>.
+                </p>
               </div>
-              <h3>Graphisme et communication</h3>
-              <p>
-                Services de <strong>design graphique</strong> et de <strong>communication visuelle</strong>. Création de <strong>logos</strong>, <strong>chartes graphiques</strong>, 
-                <strong>supports marketing</strong> et <strong>identité visuelle</strong> pour renforcer votre <strong>image de marque</strong>.
-              </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <img src="/assets/icons/tags_price.png" alt="Matériel de publicité digital" />
+            <div className="feature-card feature-card-with-bg feature-card-pub">
+              <div className="feature-card-overlay"></div>
+              <div className="feature-card-content">
+                <h3>Matériel de publicité digital</h3>
+                <p>
+                  Fourniture et installation d'<strong>écrans publicitaires digitaux</strong>, <strong>bornes interactives</strong> et solutions d'<strong>affichage 
+                  dynamique</strong> pour votre communication en <strong>point de vente</strong> et <strong>espaces publics</strong>.
+                </p>
               </div>
-              <h3>Matériel de publicité digital</h3>
-              <p>
-                Fourniture et installation d'<strong>écrans publicitaires digitaux</strong>, <strong>bornes interactives</strong> et solutions d'<strong>affichage 
-                dynamique</strong> pour votre communication en <strong>point de vente</strong> et <strong>espaces publics</strong>.
-              </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <img src="/assets/icons/shopping_shop.png" alt="Matériel et logiciel de caisses" />
+            <div className="feature-card feature-card-with-bg feature-card-materiel">
+              <div className="feature-card-overlay"></div>
+              <div className="feature-card-content">
+                <h3>Matériel et logiciel de caisses</h3>
+                <p>
+                  Solutions complètes de <strong>caisses enregistreuses</strong>, <strong>terminaux de paiement</strong> et <strong>logiciels de gestion de point de vente</strong>. 
+                  <strong>Installation</strong>, <strong>configuration</strong> et <strong>formation</strong> pour optimiser vos <strong>ventes</strong> et votre <strong>gestion</strong>.
+                </p>
               </div>
-              <h3>Matériel et logiciel de caisses</h3>
-              <p>
-                Solutions complètes de <strong>caisses enregistreuses</strong>, <strong>terminaux de paiement</strong> et <strong>logiciels de gestion de point de vente</strong>. 
-                <strong>Installation</strong>, <strong>configuration</strong> et <strong>formation</strong> pour optimiser vos <strong>ventes</strong> et votre <strong>gestion</strong>.
-              </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <img src="/assets/icons/data.png" alt="SAV et maintenance informatique" />
+            <div className="feature-card feature-card-with-bg feature-card-sav">
+              <div className="feature-card-overlay"></div>
+              <div className="feature-card-content">
+                <h3>SAV et maintenance informatique</h3>
+                <p>
+                  <strong>Service après-vente</strong> et <strong>maintenance préventive</strong> de vos équipements informatiques. <strong>Dépannage</strong>, <strong>réparation</strong>, 
+                  <strong>mises à jour</strong> et <strong>support technique</strong> pour garantir la <strong>continuité</strong> de vos activités.
+                </p>
               </div>
-              <h3>SAV et maintenance informatique</h3>
-              <p>
-                <strong>Service après-vente</strong> et <strong>maintenance préventive</strong> de vos équipements informatiques. <strong>Dépannage</strong>, <strong>réparation</strong>, 
-                <strong>mises à jour</strong> et <strong>support technique</strong> pour garantir la <strong>continuité</strong> de vos activités.
-              </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <img src="/assets/icons/business_building.png" alt="Domotique professionnel" />
+            <div className="feature-card feature-card-with-bg feature-card-domotique">
+              <div className="feature-card-overlay"></div>
+              <div className="feature-card-content">
+                <h3>Domotique professionnel</h3>
+                <p>
+                  Solutions de <strong>domotique</strong> et d'<strong>automatisation</strong> pour entreprises. <strong>Gestion centralisée</strong> de l'éclairage, 
+                  chauffage, sécurité et équipements pour optimiser le <strong>confort</strong> et réduire les <strong>coûts énergétiques</strong>.
+                </p>
               </div>
-              <h3>Domotique professionnel</h3>
-              <p>
-                Solutions de <strong>domotique</strong> et d'<strong>automatisation</strong> pour entreprises. <strong>Gestion centralisée</strong> de l'éclairage, 
-                chauffage, sécurité et équipements pour optimiser le <strong>confort</strong> et réduire les <strong>coûts énergétiques</strong>.
-              </p>
             </div>
           </div>
         </div>
