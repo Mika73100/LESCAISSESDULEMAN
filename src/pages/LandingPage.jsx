@@ -373,6 +373,9 @@ const LandingPage = () => {
               <div className="technology-item">
                 <img src="/assets/icons/wordpress.png" alt="WordPress" className="technology-logo" />
               </div>
+              <div className="technology-item">
+                <img src="/assets/icons/imin.png" alt="Imin" className="technology-logo" />
+              </div>
               {/* Duplication pour l'effet de boucle infinie */}
               <div className="technology-item">
                 <img src="/assets/icons/adobe.png" alt="Adobe" className="technology-logo" />
@@ -388,6 +391,9 @@ const LandingPage = () => {
               </div>
               <div className="technology-item">
                 <img src="/assets/icons/wordpress.png" alt="WordPress" className="technology-logo" />
+              </div>
+              <div className="technology-item">
+                <img src="/assets/icons/imin.png" alt="Imin" className="technology-logo" />
               </div>
             </div>
           </div>
