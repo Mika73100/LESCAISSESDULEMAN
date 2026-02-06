@@ -1,6 +1,6 @@
 services:
   web:
-    image: michael73100/lescaissesduleman-web:latest
+    image: michael73100/lescaissesduleman-web:1.1.0
     ports:
       - "5000:5000"
     container_name: lescaissesduleman
