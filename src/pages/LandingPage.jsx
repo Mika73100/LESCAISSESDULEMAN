@@ -274,9 +274,9 @@ const LandingPage = () => {
               avec un <strong>accompagnement 360°</strong> de <strong>l'idée à la production</strong>.
             </h3>
             <p className="services-intro-description">
-              Experts en <strong>solutions digitales</strong>, <strong>développement web</strong>, <strong>graphisme</strong> et <strong>équipements de point de vente</strong>, nous vous accompagnons tout au long de votre projet. 
+              Experts en <strong>solutions digitales</strong> : <strong>développement web</strong>, <strong>e-commerce</strong>, <strong>graphisme</strong>, <strong>gestion des réseaux sociaux</strong> et <strong>équipements de point de vente</strong>, nous vous accompagnons tout au long de votre projet. 
               De la <strong>conception à la mise en production</strong>, notre équipe vous guide pour garantir des <strong>solutions solides et performantes</strong>. 
-              Nous proposons la <strong>synchronisation entre votre caisse</strong>, <strong>votre site web</strong> et <strong>votre gestion des stocks</strong> pour une <strong>gestion unifiée</strong> de votre activité.
+              Nous proposons la <strong>synchronisation entre votre caisse</strong>, <strong>votre site web</strong>, <strong>votre e-commerce</strong> et <strong>vos réseaux sociaux</strong> pour une <strong>gestion unifiée</strong> de votre activité.
             </p>
           </div>
 
@@ -299,17 +299,17 @@ const LandingPage = () => {
                 <h3>Graphisme et communication</h3>
                 <p>
                   Services de <strong>design graphique</strong> et de <strong>communication visuelle</strong>. Création de <strong>logos</strong>, <strong>chartes graphiques</strong>, 
-                  <strong>supports marketing</strong> et <strong>identité visuelle</strong> pour renforcer votre <strong>image de marque</strong>.
+                  <strong>supports marketing</strong> et <strong>identité visuelle</strong> pour renforcer votre <strong>image de marque</strong>, sur le <strong>web</strong> comme sur vos <strong>réseaux sociaux</strong>.
                 </p>
               </div>
             </div>
             <div className="feature-card feature-card-with-bg feature-card-pub">
               <div className="feature-card-overlay"></div>
               <div className="feature-card-content">
-                <h3>Matériel de publicité digital</h3>
+                <h3>Réseaux sociaux & publicité digitale</h3>
                 <p>
-                  Fourniture et installation d'<strong>écrans publicitaires digitaux</strong>, <strong>bornes interactives</strong> et solutions d'<strong>affichage 
-                  dynamique</strong> pour votre communication en <strong>point de vente</strong> et <strong>espaces publics</strong>.
+                  <strong>Gestion</strong> et <strong>animation</strong> de vos <strong>réseaux sociaux</strong> (contenus, visuels, campagnes), ainsi que mise en place de <strong>publicités digitales</strong> 
+                  pour augmenter votre <strong>visibilité en ligne</strong> et soutenir vos <strong>ventes en magasin et e-commerce</strong>.
                 </p>
               </div>
             </div>
@@ -490,20 +490,20 @@ const LandingPage = () => {
             </div>
             <div className="pricing-card">
               <div className="pricing-card-header">
-                <h3>Graphisme & Communication</h3>
+                <h3>Graphisme & Réseaux sociaux</h3>
                 <div className="pricing-icon">
-                  <img src="/assets/icons/campaign_marketing.png" alt="Graphisme" />
+                  <img src="/assets/icons/campaign_marketing.png" alt="Graphisme & réseaux sociaux" />
                 </div>
               </div>
               <div className="pricing-content">
                 <p className="pricing-description">
-                  Services de <strong>design graphique</strong> et <strong>communication visuelle</strong>.
+                  Services de <strong>design graphique</strong>, <strong>identité visuelle</strong> et <strong>gestion de vos réseaux sociaux</strong>.
                 </p>
                 <ul className="pricing-features">
                   <li>Logo & charte graphique</li>
-                  <li>Supports marketing</li>
-                  <li>Identité visuelle</li>
-                  <li>Conseil en communication</li>
+                  <li>Supports marketing & visuels pour réseaux sociaux</li>
+                  <li>Stratégie & calendrier éditorial</li>
+                  <li>Publication & animation des comptes</li>
                 </ul>
                 <div className="pricing-footer">
                   <p className="pricing-note">À partir de <strong>80CHF par mois</strong></p>
@@ -561,6 +561,16 @@ const LandingPage = () => {
                   </svg>
                 </div>
                 <h4>Logo</h4>
+              </div>
+              <div className="service-card">
+                <div className="service-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 12h8M12 8v8"/>
+                    <path d="M7 17c1.5-1 3.5-1.5 5-1.5s3.5.5 5 1.5"/>
+                  </svg>
+                </div>
+                <h4>Gestion des réseaux sociaux</h4>
               </div>
               <div className="service-card">
                 <div className="service-card-icon">
@@ -869,7 +879,7 @@ const LandingPage = () => {
                 <p>
                   Nous intervenons principalement dans la <strong>région du Léman</strong> (Genève, Haute-Savoie, Savoie) 
                   pour les installations sur site. Pour les services de <strong>développement web</strong> et 
-                  <strong>graphisme</strong>, nous travaillons avec des clients dans toute la Suisse et France.
+                  <strong> graphisme</strong>, nous travaillons avec des clients dans toute la Suisse et France.
                 </p>
               </div>
             </div>
