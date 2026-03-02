@@ -368,6 +368,9 @@ const LandingPage = () => {
                 <img src="/assets/icons/expo.png" alt="Expo" className="technology-logo" />
               </div>
               <div className="technology-item">
+                <img src="/assets/icons/epson.png" alt="Epson" className="technology-logo" />
+              </div>
+              <div className="technology-item">
                 <img src="/assets/icons/sunmi.png" alt="Sunmi" className="technology-logo" />
               </div>
               <div className="technology-item">
@@ -704,12 +707,12 @@ const LandingPage = () => {
               <div className="about-divider"></div>
               <p>
                 Fondée sur les valeurs du <strong>service client à la suisse</strong>, notre entreprise allie <strong>proximité, organisation et excellence</strong>. 
-                Située au pied des Alpes et enrichie par une solide expérience genevoise, nous proposons des <strong>solutions informatiques 
-                complètes</strong> : <strong>caisses enregistreuses</strong>, <strong>bornes interactives</strong>, <strong>développement de sites web sur mesure</strong> et <strong>création graphique</strong>.
+                Située au pied des Alpes et forte d&rsquo;une solide expérience genevoise, nous concevons des <strong>sites internet sur mesure</strong>, des <strong>identités visuelles</strong> et <strong>supports graphiques</strong>, 
+                ainsi que des <strong>solutions informatiques complètes</strong> : <strong>caisses enregistreuses</strong>, <strong>bornes interactives</strong>, etc.
               </p>
               <p>
-                En complément de nos services techniques, nous vous accompagnons dans votre <strong>présence digitale</strong> avec la gestion de vos 
-                plateformes sociales (LinkedIn, Instagram) et le <strong>covering automobile</strong> pour valoriser votre <strong>image de marque</strong>.
+                En complément de nos services techniques, nous renforçons votre <strong>présence digitale</strong> grâce à la gestion de vos <strong>plateformes sociales</strong> (LinkedIn, Instagram) 
+                et au <strong>covering automobile</strong>, afin de valoriser et d&rsquo;unifier votre <strong>image de marque</strong>, <strong>en ligne</strong> comme <strong>sur le terrain</strong>.
               </p>
               <button className="btn btn-primary" onClick={() => scrollToSection('contact')}>En savoir plus</button>
             </div>
