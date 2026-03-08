@@ -58,7 +58,7 @@ const LandingPage = () => {
   // Informations de contact
   const contactInfo = {
     email: 'contact@lescaissesduleman.ch',
-    phone: '+41 78 662 34 46',
+    phone: '+33 6 07 53 56 27',
     address: 'Région du Léman, Genève'
   }
 

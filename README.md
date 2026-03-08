@@ -174,7 +174,7 @@ La page est entièrement responsive et s'adapte à tous les écrans :
 ## 📞 Contact
 
 - 📧 **Email** : contact@lescaissesduleman.ch
-- 📞 **Téléphone** : +41 78 662 34 46
+- 📞 **Téléphone** : +33 6 07 53 56 27
 - 📍 **Localisation** : Région du Léman, Genève
 
 ## 🔗 Réseaux sociaux
