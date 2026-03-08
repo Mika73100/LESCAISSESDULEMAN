@@ -18,7 +18,7 @@ WORKDIR /app
 COPY --from=builder /app/dist ./dist
 RUN npm install -g serve
 
-EXPOSE 3000
+EXPOSE 7000
 
-# serve gère le fallback index.html pour le routing React
-CMD ["serve", "-s", "dist", "-l", "3000"]
+# Même port que dans docker-compose (7000:7000) pour Traefik / RunTipi
+CMD ["serve", "-s", "dist", "-l", "7000"]
