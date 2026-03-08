@@ -790,45 +790,45 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Bande défilante Aix > Genève */}
+      {/* Bande défilante Aix-les-Bains > Genève */}
       <section className="scrolling-band">
         <div className="scrolling-band-track">
           <div className="scrolling-band-content">
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
           </div>
           <div className="scrolling-band-content">
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
-            <span>Aix <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
+            <span>Aix-les-Bains <img src="/assets/icons/droit.png" alt="→" className="scrolling-arrow" /> Genève</span>
           </div>
         </div>
       </section>
