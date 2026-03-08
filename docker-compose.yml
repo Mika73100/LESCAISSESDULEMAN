@@ -2,7 +2,7 @@ services:
   web:
     image: michael73100/lescaissesduleman-web:1.1.0
     ports:
-      - "7000:7000"
+      - "8082:8082"
     container_name: lescaissesduleman
     restart: unless-stopped
 

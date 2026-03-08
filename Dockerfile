@@ -18,7 +18,6 @@ WORKDIR /app
 COPY --from=builder /app/dist ./dist
 RUN npm install -g serve
 
-EXPOSE 7000
-
-# Même port que dans docker-compose (7000:7000) pour Traefik / RunTipi
-CMD ["serve", "-s", "dist", "-l", "7000"]
+# RunTipi / Traefik cible ce port (loadbalancer.server.port: "8082")
+EXPOSE 8082
+CMD ["serve", "-s", "dist", "-l", "8082"]
