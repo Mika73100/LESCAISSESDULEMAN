@@ -19,7 +19,8 @@ const LandingPage = () => {
     { src: '/assets/imgs/lesalpes.png', alt: 'Les Alpes', label: 'Les Alpes' },
     { src: '/assets/imgs/chevalet.png', alt: 'Chevalet', label: 'Chevalet' },
     { src: '/assets/imgs/genevebureau.png', alt: 'Bureau Genève', label: 'Bureau Genève' },
-    { src: '/assets/imgs/sunmi.png', alt: 'Sunmi', label: 'Sunmi' }
+    { src: '/assets/imgs/sunmi.png', alt: 'Sunmi', label: 'Sunmi' },
+    { src: '/assets/imgs/casio-geneve.png', alt: 'Casio Genève', label: 'Casio Genève' }
   ]
 
   const sunmiImages = [
