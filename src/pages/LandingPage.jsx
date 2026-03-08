@@ -999,7 +999,7 @@ const LandingPage = () => {
             <div className="footer-section">
               <h4>Suivez-nous</h4>
               <div className="social-links">
-                <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/michael-barreca/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                   <img src="/assets/icons/linkedin.png" alt="LinkedIn" />
                 </a>
                 <a href="https://www.tiktok.com/@lescaissesduleman" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
