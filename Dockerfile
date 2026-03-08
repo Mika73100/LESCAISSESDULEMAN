@@ -3,33 +3,22 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files
 COPY package*.json ./
-
-# Install dependencies
 RUN npm ci
 
-# Copy source code
 COPY . .
-
-# Build the application
 RUN npm run build
 
-# Stage 2: Production
-FROM nginx:alpine
+# Stage 2: Production (sans nginx – compatible Traefik / RunTipi)
+FROM node:18-alpine
 
-# Copy built files from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+WORKDIR /app
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Fichiers buildés + serve pour servir le SPA
+COPY --from=builder /app/dist ./dist
+RUN npm install -g serve
 
-# Copy SSL certificates
-COPY ssl/ /etc/nginx/ssl/
+EXPOSE 3000
 
-# Expose port 5000 (HTTPS)
-EXPOSE 5000
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
-
+# serve gère le fallback index.html pour le routing React
+CMD ["serve", "-s", "dist", "-l", "3000"]
