@@ -41,7 +41,9 @@ const LandingPage = () => {
     '/assets/imgs/epson/shopping.webp',
     '/assets/imgs/epson/36476-productpicture-lores-int-int-tm-p20ii_main.webp',
     '/assets/imgs/epson/epson-tm-p20ii-8-pts-mm-203-dpi-usb-c-bt-couleur-blanc-inclus-cable-usb-usb-c.jpg',
-    '/assets/imgs/epson/ChatGPT Image 4 mars 2026, 20_49_58.png'
+    '/assets/imgs/epson/ChatGPT Image 4 mars 2026, 20_49_58.png',
+    '/assets/imgs/epson/tmyt70ii_004.webp',
+    '/assets/imgs/epson/epsontm-t20iii-3.jpg'
   ]
 
   const nextImage = () => {
@@ -134,8 +136,9 @@ const LandingPage = () => {
         </div>
       </header>
 
+      <main id="main-content">
       {/* Hero Section */}
-      <section id="accueil" className="hero">
+      <section id="accueil" className="hero" aria-label="Accueil">
         <div className="container">
           <div className="hero-content">
             <div className="hero-badge">
@@ -1012,6 +1015,7 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
+      </main>
 
       {/* WhatsApp CTA Button */}
       <a 

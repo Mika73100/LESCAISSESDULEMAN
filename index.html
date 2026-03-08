@@ -3,18 +3,85 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Les Caisses du Léman - Solutions IT complètes : développement web, graphisme, caisses enregistreuses, gestion réseaux sociaux. Expertise Franco-Suisse en région du Léman, Genève. Devis gratuit sous 48h." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO principal -->
+  <title>Caisses Enregistreuses & Solutions IT | Les Caisses du Léman – Genève, Léman</title>
+  <meta name="description" content="Caisses enregistreuses Sunmi & Epson, développement web, e-commerce, graphisme et réseaux sociaux. Région du Léman (Genève, Aix-les-Bains). Installation, formation, devis gratuit sous 48h." />
+  <meta name="keywords" content="caisse enregistreuse, Sunmi, Epson, Genève, Léman, développement web, e-commerce, graphisme, réseaux sociaux, terminal de paiement, TPE, Aix-les-Bains, Suisse, France" />
+  <meta name="author" content="Les Caisses du Léman" />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1e3a5f" />
   <link rel="canonical" href="https://lescaissesduleman.ch/" />
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lescaissesduleman.ch/" />
+  <meta property="og:title" content="Les Caisses du Léman – Caisses enregistreuses & solutions digitales | Genève, Léman" />
+  <meta property="og:description" content="Caisses enregistreuses Sunmi & Epson, sites web, e-commerce, graphisme. Installation et formation. Devis gratuit sous 48h. Région du Léman." />
+  <meta property="og:image" content="https://lescaissesduleman.ch/assets/imgs/logo-horizontal.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="fr_CH" />
+  <meta property="og:site_name" content="Les Caisses du Léman" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Les Caisses du Léman – Caisses enregistreuses & solutions IT | Genève, Léman" />
+  <meta name="twitter:description" content="Caisses enregistreuses Sunmi & Epson, développement web, graphisme. Devis gratuit sous 48h. Région du Léman." />
+  <meta name="twitter:image" content="https://lescaissesduleman.ch/assets/imgs/logo-horizontal.png" />
+
+  <!-- Favicon & app -->
   <link rel="icon" type="image/png" href="/assets/imgs/logo-icon.png" />
   <link rel="apple-touch-icon" href="/assets/imgs/logo-icon.png" />
-  <script id="trustindex-loader" src="https://cdn.trustindex.io/loader.js?bdd668f624ea6214a4761c20403" async
-    defer></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Les Caisses du Léman</title>
+
+  <script id="trustindex-loader" src="https://cdn.trustindex.io/loader.js?bdd668f624ea6214a4761c20403" async defer></script>
 </head>
 
 <body>
+  <!-- Données structurées JSON-LD pour le référencement -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://lescaissesduleman.ch/#organization",
+        "name": "Les Caisses du Léman",
+        "url": "https://lescaissesduleman.ch",
+        "logo": "https://lescaissesduleman.ch/assets/imgs/logo-horizontal.png",
+        "image": "https://lescaissesduleman.ch/assets/imgs/logo-horizontal.png",
+        "description": "Solutions IT et caisses enregistreuses en région du Léman : développement web, e-commerce, graphisme, caisses Sunmi et Epson, gestion réseaux sociaux. Devis gratuit sous 48h.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Genève",
+          "addressLocality": "Région du Léman"
+        },
+        "areaServed": [
+          { "@type": "Place", "name": "Genève" },
+          { "@type": "Place", "name": "Léman" },
+          { "@type": "Place", "name": "Aix-les-Bains" },
+          { "@type": "Country", "name": "Suisse" },
+          { "@type": "Country", "name": "France" }
+        ],
+        "telephone": "+41-78-662-34-46",
+        "email": "contact@lescaissesduleman.ch",
+        "priceRange": "Devis sur demande",
+        "openingHoursSpecification": [],
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lescaissesduleman.ch/#website",
+        "url": "https://lescaissesduleman.ch",
+        "name": "Les Caisses du Léman",
+        "publisher": { "@id": "https://lescaissesduleman.ch/#organization" },
+        "inLanguage": "fr-CH"
+      }
+    ]
+  }
+  </script>
+
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
