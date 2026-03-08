@@ -35,6 +35,15 @@ const LandingPage = () => {
     '/assets/imgs/sunmi/tpe2.png'
   ]
 
+  const epsonImages = [
+    '/assets/imgs/epson/caisse-epson.webp',
+    '/assets/imgs/epson/caisse-epson-ecran.webp',
+    '/assets/imgs/epson/shopping.webp',
+    '/assets/imgs/epson/36476-productpicture-lores-int-int-tm-p20ii_main.webp',
+    '/assets/imgs/epson/epson-tm-p20ii-8-pts-mm-203-dpi-usb-c-bt-couleur-blanc-inclus-cable-usb-usb-c.jpg',
+    '/assets/imgs/epson/ChatGPT Image 4 mars 2026, 20_49_58.png'
+  ]
+
   const nextImage = () => {
     setActiveImage((prev) => (prev + 1) % images.length)
   }
@@ -424,6 +433,30 @@ const LandingPage = () => {
               ))}
             </div>
           </div>
+
+          {/* Galerie d'images Epson */}
+          <div className="epson-gallery-section">
+            <div className="epson-gallery-header">
+              <h3 className="epson-gallery-title">Nos <strong>produits Epson</strong></h3>
+              <p className="epson-gallery-subtitle">Découvrez notre gamme d'<strong>imprimantes à reçus</strong> et <strong>caisses</strong> Epson</p>
+            </div>
+            <div className="epson-gallery-grid">
+              {epsonImages.map((image, index) => (
+                <div 
+                  key={index}
+                  className="epson-gallery-item"
+                >
+                  <div className="epson-gallery-image-wrapper">
+                    <img 
+                      src={image} 
+                      alt={`Produit Epson ${index + 1}`}
+                      className="epson-gallery-image"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -458,7 +491,6 @@ const LandingPage = () => {
                   <li>Maintenance & support</li>
                 </ul>
                 <div className="pricing-footer">
-                  <p className="pricing-note">À partir de <strong>120CHF par mois</strong></p>
                   <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
                 </div>
               </div>
@@ -483,7 +515,6 @@ const LandingPage = () => {
                   <li>Maintenance disponible</li>
                 </ul>
                 <div className="pricing-footer">
-                  <p className="pricing-note">À partir de <strong>250CHF par mois</strong></p>
                   <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
                 </div>
               </div>
@@ -506,7 +537,6 @@ const LandingPage = () => {
                   <li>Publication & animation des comptes</li>
                 </ul>
                 <div className="pricing-footer">
-                  <p className="pricing-note">À partir de <strong>80CHF par mois</strong></p>
                   <button className="btn btn-primary" onClick={scrollToContact}>Demander un devis</button>
                 </div>
               </div>

@@ -1198,6 +1198,73 @@
   padding: 1.5rem;
 }
 
+// Epson Gallery Section
+.epson-gallery-section {
+  margin-top: 4rem;
+  padding: 3rem 0;
+  background: linear-gradient(180deg, #f8f9fa 0%, $white 100%);
+  border-radius: 16px;
+}
+
+.epson-gallery-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.epson-gallery-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $primary-blue;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+
+  strong {
+    color: $primary-red;
+  }
+}
+
+.epson-gallery-subtitle {
+  font-size: 1.1rem;
+  color: $dark-gray;
+  margin: 0;
+  line-height: 1.6;
+
+  strong {
+    color: $dark-gray;
+    font-weight: 700;
+  }
+}
+
+.epson-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.epson-gallery-item {
+  position: relative;
+}
+
+.epson-gallery-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: $white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.epson-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1.5rem;
+}
+
 // Pricing Section
 .pricing {
   padding: 5rem 0;
@@ -2491,6 +2558,23 @@
     gap: 1.25rem;
   }
 
+  .epson-gallery-section {
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+  }
+
+  .epson-gallery-title {
+    font-size: 1.5rem;
+  }
+
+  .epson-gallery-subtitle {
+    font-size: 1rem;
+  }
+
+  .epson-gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
 
   .pricing .container {
     padding: 0 1rem;
@@ -3018,6 +3102,23 @@
     gap: 1rem;
   }
 
+  .epson-gallery-section {
+    margin-top: 2rem;
+    padding: 1.5rem 0.75rem;
+  }
+
+  .epson-gallery-title {
+    font-size: 1.25rem;
+  }
+
+  .epson-gallery-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .epson-gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
 
   .sunmi-gallery-label {
     font-size: 0.9rem;
