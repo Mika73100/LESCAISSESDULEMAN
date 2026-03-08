@@ -114,7 +114,7 @@ const LandingPage = () => {
             </div>
             <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
               <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services') }}>Services</a>
-              <a href="#tarifs" onClick={(e) => { e.preventDefault(); scrollToSection('tarifs') }}>Tarifs</a>
+              <a href="#tarifs" onClick={(e) => { e.preventDefault(); scrollToSection('tarifs') }}>Offres</a>
               <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
               <a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq') }}>FAQ</a>
               <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="nav-cta-btn">Contact</a>
@@ -127,7 +127,7 @@ const LandingPage = () => {
             {isMenuOpen && (
               <div className="mobile-menu">
                 <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services') }}>Services</a>
-                <a href="#tarifs" onClick={(e) => { e.preventDefault(); scrollToSection('tarifs') }}>Tarifs</a>
+                <a href="#tarifs" onClick={(e) => { e.preventDefault(); scrollToSection('tarifs') }}>Offres</a>
                 <a href="#apropos" onClick={(e) => { e.preventDefault(); scrollToSection('apropos') }}>À propos</a>
                 <a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq') }}>FAQ</a>
                 <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="mobile-cta-btn">Contact</a>
@@ -468,11 +468,11 @@ const LandingPage = () => {
       <section id="tarifs" className="pricing">
         <div className="container">
           <div className="pricing-header">
-            <div className="pricing-badge">Nos Tarifs</div>
-            <h2 className="section-title">Tarifs Transparents</h2>
+            <div className="pricing-badge">Nos Offres</div>
+            <h2 className="section-title">Des offres adaptées à votre projet</h2>
             <p className="pricing-subtitle">
-              Des <strong>tarifs clairs</strong> et <strong>adaptés</strong> à vos besoins. 
-              Tous nos devis sont <strong>gratuits</strong> et personnalisés selon votre projet.
+              Des <strong>offres sur mesure</strong> selon vos besoins. 
+              Tous nos devis sont <strong>gratuits</strong> et personnalisés.
             </p>
           </div>
           <div className="pricing-grid">
@@ -1020,7 +1020,7 @@ const LandingPage = () => {
 
       {/* WhatsApp CTA Button */}
       <a 
-        href="https://wa.me/41786623446" 
+        href="https://wa.me/33607535627" 
         target="_blank" 
         rel="noopener noreferrer"
         className="whatsapp-cta"
