@@ -20,4 +20,5 @@ RUN npm install -g serve
 
 # RunTipi / Traefik cible ce port (loadbalancer.server.port: "8082")
 EXPOSE 8082
-CMD ["serve", "-s", "dist", "-l", "8082"]
+# -s = mode SPA (fallback index.html pour éviter 404 sur les routes)
+CMD ["serve", "dist", "-s", "-l", "8082"]
