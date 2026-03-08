@@ -1,8 +1,25 @@
 services:
   web:
     image: michael73100/lescaissesduleman-web:1.1.0
-    ports:
-      - "8082:8082"
     container_name: lescaissesduleman
     restart: unless-stopped
+    ports:
+      - "8082:8082"
+    networks:
+      - runtipi_tipi_main_network
+    labels:
+      # Activer Traefik pour ce conteneur
+      - "traefik.enable=true"
+      # Route HTTP (remplacez VOTRE_DOMAINE par ex. lescaissesduleman.fr)
+      - "traefik.http.routers.lescaissesduleman.rule=Host(`lescaissesduleman.michaelbarreca.fr`)"
+      # Port du backend (évite le 502)
+      - "traefik.http.services.lescaissesduleman.loadbalancer.server.port=8082"
+      # Optionnel : redirection HTTP -> HTTPS si vous utilisez HTTPS
+      # - "traefik.http.routers.lescaissesduleman-secure.rule=Host(`VOTRE_DOMAINE`)"
+      # - "traefik.http.routers.lescaissesduleman-secure.entrypoints=websecure"
+      # - "traefik.http.routers.lescaissesduleman-secure.tls=true"
+      # - "traefik.http.routers.lescaissesduleman-secure.service=lescaissesduleman"
 
+networks:
+  runtipi_tipi_main_network:
+    external: true
