@@ -8,17 +8,11 @@ services:
     networks:
       - runtipi_tipi_main_network
     labels:
-      # Activer Traefik pour ce conteneur
+      # RunTipi crée déjà les routeurs ; on expose uniquement le backend attendu
       - "traefik.enable=true"
-      # Route HTTP (remplacez VOTRE_DOMAINE par ex. lescaissesduleman.fr)
-      - "traefik.http.routers.lescaissesduleman.rule=Host(`lescaissesduleman.michaelbarreca.fr`)"
-      # Port du backend (évite le 502)
-      - "traefik.http.services.lescaissesduleman.loadbalancer.server.port=8082"
-      # Optionnel : redirection HTTP -> HTTPS si vous utilisez HTTPS
-      # - "traefik.http.routers.lescaissesduleman-secure.rule=Host(`VOTRE_DOMAINE`)"
-      # - "traefik.http.routers.lescaissesduleman-secure.entrypoints=websecure"
-      # - "traefik.http.routers.lescaissesduleman-secure.tls=true"
-      # - "traefik.http.routers.lescaissesduleman-secure.service=lescaissesduleman"
+      - "traefik.docker.network=runtipi_tipi_main_network"
+      # Même nom de service que les routeurs RunTipi (lescaissesduleman-_user)
+      - "traefik.http.services.lescaissesduleman-_user.loadbalancer.server.port=8082"
 
 networks:
   runtipi_tipi_main_network:
