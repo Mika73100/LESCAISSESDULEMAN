@@ -1,24 +1,22 @@
-# Stage 1: Build
-FROM node:18-alpine AS builder
+# Étape 1 : build de l'app Vite + React
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
 RUN npm run build
 
-# Stage 2: Production (sans nginx – compatible Traefik / RunTipi)
-FROM node:18-alpine
+# Étape 2 : servir les fichiers statiques avec nginx
+FROM nginx:alpine
 
-WORKDIR /app
+# Remplacer la page par défaut par notre app
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Fichiers buildés + serve pour servir le SPA
-COPY --from=builder /app/dist ./dist
-RUN npm install -g serve
+EXPOSE 80
 
-# RunTipi / Traefik cible ce port (loadbalancer.server.port: "8082")
-EXPOSE 8082
-# -s = mode SPA (fallback index.html pour éviter 404 sur les routes)
-CMD ["serve", "dist", "-s", "-l", "8082"]
+CMD ["nginx", "-g", "daemon off;"]
