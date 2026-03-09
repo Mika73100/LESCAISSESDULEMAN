@@ -3,8 +3,8 @@ services:
     image: michael73100/lescaissesduleman-web:1.1.3
     container_name: lescaissesduleman
     restart: unless-stopped
-    ports:
-      - "8082:8082"
+    expose:
+      - "8082"
     networks:
       tipi_main_network:
         gw_priority: 1
