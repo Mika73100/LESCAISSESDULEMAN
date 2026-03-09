@@ -1,6 +1,6 @@
 services:
   web:
-    image: michael73100/lescaissesduleman-web:1.1.2
+    image: michael73100/lescaissesduleman-web:1.1.3
     container_name: lescaissesduleman
     restart: unless-stopped
     ports:
