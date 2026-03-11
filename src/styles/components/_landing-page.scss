@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../base/variables' as *;
 
 .landing-page {
@@ -547,30 +548,17 @@
   z-index: 1;
 }
 
-// Catalogue Button - Design avec badge circulaire et texte autour
+// Badge catalogue — logo uniquement (plus de téléchargement)
 .catalogue-button {
   position: absolute;
   bottom: -40px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  justify-content: center;
   z-index: 999;
-  padding: 0;
-
-  &:hover {
-    transform: translateX(-50%) translateY(-5px);
-  }
-
-  &:active {
-    transform: translateX(-50%) translateY(-2px);
-  }
+  pointer-events: none;
 
   .catalogue-badge {
     width: 80px;
@@ -580,24 +568,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 
+    box-shadow:
       0 10px 30px rgba(0, 85, 164, 0.4),
       0 5px 15px rgba(220, 20, 60, 0.3),
       inset 0 2px 4px rgba(255, 255, 255, 0.3);
     position: relative;
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -3px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, $primary-blue, $primary-red);
-      opacity: 0;
-      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      z-index: -1;
-      filter: blur(8px);
-    }
 
     .catalogue-text-curved {
       position: absolute;
@@ -607,16 +582,15 @@
       width: 150%;
       height: 150%;
       pointer-events: none;
-      z-index: 2;
-      animation: rotateText 20s linear infinite;
+      z-index: 0;
       overflow: visible;
-      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      animation: rotateCatalogueText 20s linear infinite;
 
       text {
         text-transform: uppercase;
-        letter-spacing: 1.5px;
-        fill: #FFFFFF !important;
-        stroke: rgba(0, 0, 0, 0.3);
+        letter-spacing: 0.5px;
+        fill: #ffffff;
+        stroke: rgba(0, 0, 0, 0.25);
         stroke-width: 0.5px;
         paint-order: stroke fill;
       }
@@ -629,52 +603,19 @@
       border-radius: 50%;
       border: 3px solid rgba(255, 255, 255, 0.9);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       position: relative;
-      z-index: 3;
+      z-index: 1;
     }
-  }
-
-  &:hover .catalogue-badge {
-    transform: scale(1.15);
-    box-shadow: 
-      0 15px 40px rgba(0, 85, 164, 0.5),
-      0 8px 20px rgba(220, 20, 60, 0.4),
-      inset 0 2px 4px rgba(255, 255, 255, 0.3);
-
-    &::before {
-      opacity: 0.6;
-    }
-
-    .catalogue-text-curved {
-      transform: translate(-50%, -50%) scale(1.15);
-      animation: rotateText 20s linear infinite;
-    }
-
-    .catalogue-logo {
-      transform: rotate(10deg) scale(1.05);
-    }
-  }
-
-  .catalogue-text-label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: $primary-red;
-    text-align: center;
-    white-space: nowrap;
-    text-transform: uppercase;
-    letter-spacing: 1px;
   }
 }
 
-@keyframes rotateText {
+@keyframes rotateCatalogueText {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
     transform: translate(-50%, -50%) rotate(360deg);
   }
-
 }
 
 // WhatsApp CTA Button
@@ -1131,6 +1072,40 @@
   }
 }
 
+// Partenaires financement Oney & PayPal — fond blanc
+.finance-partner {
+  margin-top: 3rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background: $light-gray;
+  border-radius: 12px;
+}
+
+.finance-partner-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.finance-partner-logo {
+  height: 100px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.finance-partner-text {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: $dark-gray;
+  margin: 0;
+  line-height: 1.5;
+}
+
 // Sunmi Gallery Section
 .sunmi-gallery-section {
   margin-top: 4rem;
@@ -1263,6 +1238,94 @@
   height: 100%;
   object-fit: contain;
   padding: 1.5rem;
+}
+
+// Comment ça marche ? — Timeline 4 étapes
+.how-it-works {
+  padding: 4rem 0;
+  background: $white;
+  scroll-margin-top: 100px;
+}
+
+.how-it-works-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.how-it-works-subtitle {
+  font-size: 1.1rem;
+  color: $medium-gray;
+  margin: 0.75rem 0 0;
+  line-height: 1.6;
+}
+
+.how-it-works-timeline {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.how-it-works-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: flex-start;
+  position: relative;
+
+  &:not(:last-child) .how-it-works-step-marker::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 28px;
+    transform: translateX(-50%);
+    width: 2px;
+    height: calc(100% + 1.5rem);
+    background: linear-gradient(180deg, $primary-blue 0%, rgba($primary-blue, 0.3) 100%);
+    border-radius: 2px;
+  }
+}
+
+.how-it-works-step-marker {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-it-works-step-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: $primary-blue;
+  box-shadow: 0 0 0 4px rgba($primary-blue, 0.2);
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.how-it-works-step-content {
+  padding-bottom: 2rem;
+}
+
+.how-it-works-step-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $primary-blue;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.how-it-works-step-text {
+  font-size: 0.95rem;
+  color: $dark-gray;
+  margin: 0;
+  line-height: 1.6;
 }
 
 // Pricing Section
@@ -1504,6 +1567,185 @@
   margin-bottom: 2.5rem;
   width: 100%;
   box-sizing: border-box;
+
+  &.pos-modules-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+// Cartes style logiciel de caisse (POS / Paramètres)
+$pos-icon-bg: #e8eaf0;
+$pos-icon-color: #5c52c6;
+$pos-gratuit-bg: #e8f5e9;
+$pos-gratuit-text: #28a745;
+$pos-price-text: #2c5282;
+$pos-soon-text: #f0ad4e;
+$pos-btn-red: #dc3545;
+
+.pos-module-card {
+  background: $white;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s ease;
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.pos-module-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $pos-icon-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  flex-shrink: 0;
+
+  svg {
+    color: $pos-icon-color;
+    stroke: $pos-icon-color;
+  }
+}
+
+.pos-module-status {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+
+  &--gratuit {
+    background: $pos-gratuit-bg;
+    color: $pos-gratuit-text;
+  }
+  &--price {
+    background: rgba(44, 82, 130, 0.08);
+    color: $pos-price-text;
+  }
+  &--soon {
+    background: rgba(240, 173, 78, 0.2);
+    color: color.adjust($pos-soon-text, $lightness: -12%);
+  }
+}
+
+.pos-module-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $dark-gray;
+  margin: 0 0 0.4rem 0;
+  line-height: 1.35;
+}
+
+.pos-module-title-btn {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background: $pos-btn-red;
+  color: $white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  margin-top: auto;
+  transition: background 0.2s ease;
+  &:hover {
+    background: color.adjust($pos-btn-red, $lightness: -6%);
+  }
+}
+
+// Accordéon « Plus d'options » — bandeau style bouton Contact (rouge, texte blanc centré)
+.pos-more-options-accordion {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.pos-more-options-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, $primary-red 0%, #8a1520 100%);
+  color: $white;
+  border: 2px solid $primary-red;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
+  transition: opacity 0.2s ease, box-shadow 0.2s ease;
+
+  .pos-more-options-toggle-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+
+  &.is-open .pos-more-options-toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    opacity: 0.95;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.4);
+  }
+}
+
+.pos-more-options-grid {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+}
+
+.pos-module-details {
+  font-size: 0.85rem;
+  color: $medium-gray;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+  &:hover {
+    text-decoration: underline;
+    color: $pos-icon-color;
+  }
+}
+
+.pos-module-btn {
+  width: 100%;
+  max-width: 140px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: $pos-btn-red;
+  color: $white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background 0.2s ease;
+  &:hover {
+    background: color.adjust($pos-btn-red, $lightness: -6%);
+  }
+}
+
+.pos-module-coming {
+  font-size: 0.8rem;
+  color: $medium-gray;
+  margin: 0.5rem 0 0 0;
+  font-style: italic;
 }
 
 .service-card {
@@ -1564,6 +1806,13 @@
     margin-bottom: 1.25rem;
   }
 
+  .services-grid-cta-note {
+    font-size: 0.95rem;
+    color: $medium-gray;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
   .btn {
     animation: blinkRed 2s ease-in-out infinite;
   }
@@ -1611,7 +1860,7 @@
 .scrolling-band-track {
   display: flex;
   width: fit-content;
-  animation: scrollBandReverse 30s linear infinite;
+  animation: scrollBandReverse 55s linear infinite;
   will-change: transform;
 }
 
@@ -2540,6 +2789,20 @@
     font-size: 1.5rem;
   }
 
+  .finance-partner {
+    margin-top: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .finance-partner-logo {
+    height: 80px;
+    max-width: 220px;
+  }
+
+  .finance-partner-text {
+    font-size: 1.05rem;
+  }
+
   .sunmi-gallery-section {
     margin-top: 3rem;
     padding: 2rem 1rem;
@@ -2554,7 +2817,7 @@
   }
 
   .sunmi-gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
 
@@ -2572,8 +2835,32 @@
   }
 
   .epson-gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
+  }
+
+  .how-it-works {
+    padding: 3rem 0;
+  }
+
+  .how-it-works-header {
+    margin-bottom: 2rem;
+  }
+
+  .how-it-works-subtitle {
+    font-size: 1rem;
+  }
+
+  .how-it-works-step {
+    gap: 1.25rem;
+  }
+
+  .how-it-works-step-title {
+    font-size: 1.05rem;
+  }
+
+  .how-it-works-step-text {
+    font-size: 0.9rem;
   }
 
   .pricing .container {
@@ -2638,8 +2925,13 @@
   }
 
   .services-grid-cards {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  .services-grid-cards.pos-modules-grid,
+  .pos-more-options-accordion .pos-more-options-grid.pos-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .services-grid-header {
@@ -2963,8 +3255,13 @@
   }
 
   .services-grid-cards {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
+  }
+
+  .services-grid-cards.pos-modules-grid,
+  .pos-more-options-accordion .pos-more-options-grid.pos-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .services-grid-header {
@@ -3098,7 +3395,7 @@
   }
 
   .sunmi-gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 
@@ -3116,8 +3413,50 @@
   }
 
   .epson-gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  .finance-partner {
+    margin-top: 1.5rem;
+    padding: 1.75rem 1.25rem;
+  }
+
+  .finance-partner-logo {
+    height: 64px;
+    max-width: 180px;
+  }
+
+  .finance-partner-text {
+    font-size: 0.95rem;
+  }
+
+  .services-grid-cta-note {
+    font-size: 0.85rem;
+  }
+
+  .how-it-works {
+    padding: 2rem 0;
+  }
+
+  .how-it-works-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .how-it-works-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .how-it-works-step {
+    gap: 1rem;
+  }
+
+  .how-it-works-step-title {
+    font-size: 1rem;
+  }
+
+  .how-it-works-step-text {
+    font-size: 0.85rem;
   }
 
   .sunmi-gallery-label {

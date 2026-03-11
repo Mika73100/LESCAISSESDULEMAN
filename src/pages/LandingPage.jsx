@@ -2,11 +2,14 @@ import React, { useState, useRef } from 'react'
 import { useTrustindex } from '../composants/useTrustindex'
 import { useMenu } from '../composants/useMenu'
 
+const MAIN_MODULES_COUNT = 20
+
 const LandingPage = () => {
   useTrustindex()
   const { isMenuOpen, toggleMenu, setIsMenuOpen } = useMenu()
   const [activeImage, setActiveImage] = useState(0)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const [moreOptionsOpen, setMoreOptionsOpen] = useState(false)
   const videoRef = useRef(null)
   
   const images = [
@@ -59,8 +62,180 @@ const LandingPage = () => {
   const contactInfo = {
     email: 'contact@lescaissesduleman.ch',
     phone: '+33 6 07 53 56 27',
-    address: 'Région du Léman, Genève'
+    address: 'Aix-les-Bains | Genève'
   }
+
+  // Modules du logiciel de caisse (style POS / Paramètres) — chaque module a un picto unique
+  const posModuleIcons = [
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M12 11v6"/><path d="M9 14h6"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="8" x2="7" y2="8.01"/><line x1="11" y1="12" x2="11" y2="12.01"/><line x1="15" y1="12" x2="15" y2="12.01"/><line x1="19" y1="12" x2="19" y2="12.01"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6z"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v18"/><path d="M8 7l4-4 4 4"/><path d="M8 17l4 4 4-4"/><path d="M3 12h2"/><path d="M5 10h2"/><path d="M5 14h2"/><path d="M19 12h2"/><path d="M17 10h2"/><path d="M17 14h2"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><rect x="9" y="6" width="6" height="2" rx="1"/><circle cx="12" cy="14" r="2"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="3"/><path d="M19 12v6"/><path d="M22 15l-3 3-3-3"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/><path d="M5 5l14 14"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2"/><path d="M12 21v2"/><path d="M4.22 4.22l1.42 1.42"/><path d="M18.36 18.36l1.42 1.42"/><path d="M1 12h2"/><path d="M21 12h2"/><path d="M4.22 19.78l1.42-1.42"/><path d="M18.36 5.64l1.42-1.42"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><line x1="7.5" y1="4.21" x2="16.5" y2="19.79"/><line x1="16.5" y1="4.21" x2="7.5" y2="19.79"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M12 12h.01"/><path d="M12 16h.01"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M9 15l2 2 4-4"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="2" y1="6" x2="6" y2="6"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="2" y1="18" x2="6" y2="18"/><line x1="9" y1="6" x2="22" y2="6"/><line x1="9" y1="12" x2="22" y2="12"/><line x1="9" y1="18" x2="22" y2="18"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M6 6h4"/><path d="M6 10h4"/><path d="M6 14h4"/><path d="M6 18h4"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/><path d="M14 6h4"/><path d="M14 10h4"/><path d="M14 14h4"/><path d="M14 18h4"/><path d="M18 6h4"/><path d="M18 10h4"/><path d="M18 14h4"/><path d="M18 18h4"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h7v7H4z"/><path d="M13 4h7v4h-7z"/><path d="M13 13h7v7h-7z"/><path d="M4 13h7v7H4z"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="2"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/><path d="M7 15h.01"/><path d="M12 15h.01"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M12 12l9-5"/><path d="M12 12v9.5"/><path d="M12 12L3 7"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l3 3"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v18"/><path d="M8 7l4-4 4 4"/><path d="M8 17l4 4 4-4"/><path d="M3 12h2"/><path d="M5 10h2"/><path d="M5 14h2"/><path d="M19 12h2"/><path d="M17 10h2"/><path d="M17 14h2"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><path d="M6 16h4"/><path d="M14 16h4"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 2a10 10 0 0 1 10 10"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/><line x1="9" y1="19" x2="12" y2="19"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 0 1-9 9 9 9 0 0 1-9-9 6 6 0 0 0 9-9z"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M12 11v6"/><path d="M9 14h6"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/><path d="M7 15h2"/><path d="M15 15h2"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>),
+    (props) => (<svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>)
+  ]
+
+  const posModules = [
+    'Imprimante ticket',
+    'Ticket sans détail',
+    'Bons de préparations',
+    'Impression code barres',
+    'Gestion des commandes',
+    'Livraison',
+    'Click and collect',
+    'À emporter',
+    'Sur place',
+    'Stock',
+    'Import / Export stocks',
+    'Inventaire',
+    'Plan de salle',
+    'Formules / Menus',
+    'Partage des règlements',
+    'Encaissement partiel',
+    'Gestion des utilisateurs',
+    'Pointeuse',
+    'Compte client',
+    'Fidélité client',
+    'Statistiques avancées',
+    'TPE / Paiement',
+    'Bons cadeaux / Avoirs',
+    'Pourboire',
+    'Multi-Poste (Pad)',
+    'Borne de commande',
+    'Ecran cuisine (KDS)',
+    'Balance connectée',
+    'Télécommande (Pad)',
+    'Afficheur client (Display)',
+    'Code d\'accès et verrouillage',
+    'Badge de connexion',
+    'Happy hour',
+    'Gestion des déclinaisons',
+    'Options et suppléments',
+    'Retours produits',
+    'Edition en masse',
+    'Import / Export produits',
+    'Fournisseur',
+    'Images',
+    'Indisponibilités',
+    'Famille d\'article',
+    'Pack d\'article',
+    'Article prix variable',
+    'Article avec unités',
+    'Gestion de code barre',
+    'Lecteur code barre via caméra',
+    'Grille de bouton avancée',
+    'Multi tarifs',
+    'Activité en temps réel (Live)',
+    'Gestion des emplacements',
+    'Viva Wallet',
+    'SumUp',
+    'Ingenico',
+    'Resto Flash',
+    'Deliverect',
+    'Bon d\'achats',
+    'Flux de caisse',
+    'Gestion fonds de caisse',
+    'Française des jeux',
+    'Aide au comptage de la caisse',
+    'Reconnaissance ticket restaurant',
+    'Carte titre restaurant',
+    'Yavin',
+    'Verifone',
+    'CashDro',
+    'Nepting',
+    'LoyalPay',
+    'Worldline',
+    'Mode école',
+    'Assistance soir et weekend',
+    'Menu digital',
+    'Commandes par QR code',
+    'Quota de commande',
+    'Atilla Pay',
+    'KillBills',
+    'Billiv',
+    'Easybeer'
+  ]
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId)
@@ -72,15 +247,6 @@ const LandingPage = () => {
 
   const scrollToContact = () => {
     scrollToSection('contact')
-  }
-
-  const downloadCatalogue = () => {
-    const link = document.createElement('a')
-    link.href = '/assets/doc/catalogue-lescaissesduleman.pdf'
-    link.download = 'catalogue-lescaissesduleman.pdf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
   }
 
   const playVideo = () => {
@@ -255,21 +421,21 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <button className="catalogue-button" onClick={downloadCatalogue}>
+        <div className="catalogue-button" aria-hidden="true">
           <div className="catalogue-badge">
-            <svg className="catalogue-text-curved" viewBox="0 0 200 200" width="120" height="120">
+            <svg className="catalogue-text-curved" viewBox="0 0 200 200" width="120" height="120" aria-hidden="true">
               <defs>
                 <path id="catalogue-circle-path" d="M 100, 100 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0" />
               </defs>
               <text fill="#FFFFFF" fontSize="11" fontWeight="700" fontFamily="Arial, sans-serif" textAnchor="middle">
                 <textPath href="#catalogue-circle-path" startOffset="50%">
-                  Telecharger         le         catalogue
+                  Les Caisses du Léman
                 </textPath>
               </text>
             </svg>
-            <img src="/assets/imgs/logo-icon.png" alt="Logo" className="catalogue-logo" />
+            <img src="/assets/imgs/logo-icon.png" alt="Les Caisses du Léman" className="catalogue-logo" />
           </div>
-        </button>
+        </div>
       </section>
 
       {/* Features Section */}
@@ -413,6 +579,15 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
+
+          {/* Partenaires financement Oney & PayPal */}
+          <div className="finance-partner">
+            <div className="finance-partner-logo-wrap">
+              <img src="/assets/imgs/Logo_Oney.svg.png" alt="Oney" className="finance-partner-logo" />
+              <img src="/assets/imgs/PayPal.svg.png" alt="PayPal" className="finance-partner-logo" />
+            </div>
+            <p className="finance-partner-text">Financer vos projets en plusieurs fois</p>
+          </div>
           
           {/* Galerie d'images Sunmi */}
           <div className="sunmi-gallery-section">
@@ -464,6 +639,56 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Comment ça marche ? */}
+      <section id="comment-ca-marche" className="how-it-works">
+        <div className="container">
+          <div className="how-it-works-header">
+            <h2 className="section-title">Comment ça marche ?</h2>
+            <p className="how-it-works-subtitle">
+              De l&apos;échange à la mise en place, nous vous accompagnons en <strong>4 étapes</strong>.
+            </p>
+          </div>
+          <div className="how-it-works-timeline">
+            <div className="how-it-works-step">
+              <div className="how-it-works-step-marker">
+                <span className="how-it-works-step-dot" aria-hidden="true" />
+              </div>
+              <div className="how-it-works-step-content">
+                <h3 className="how-it-works-step-title">1. Échange & diagnostic</h3>
+                <p className="how-it-works-step-text">Nous échangeons sur vos besoins (caisse, borne, site, graphisme) et analysons votre activité pour proposer la solution adaptée.</p>
+              </div>
+            </div>
+            <div className="how-it-works-step">
+              <div className="how-it-works-step-marker">
+                <span className="how-it-works-step-dot" aria-hidden="true" />
+              </div>
+              <div className="how-it-works-step-content">
+                <h3 className="how-it-works-step-title">2. Devis sur mesure</h3>
+                <p className="how-it-works-step-text">Vous recevez une proposition personnalisée et gratuite, sans engagement. Nous ajustons ensemble selon votre budget.</p>
+              </div>
+            </div>
+            <div className="how-it-works-step">
+              <div className="how-it-works-step-marker">
+                <span className="how-it-works-step-dot" aria-hidden="true" />
+              </div>
+              <div className="how-it-works-step-content">
+                <h3 className="how-it-works-step-title">3. Installation & formation</h3>
+                <p className="how-it-works-step-text">Mise en place du matériel et du logiciel, puis formation de votre équipe pour une prise en main rapide.</p>
+              </div>
+            </div>
+            <div className="how-it-works-step">
+              <div className="how-it-works-step-marker">
+                <span className="how-it-works-step-dot" aria-hidden="true" />
+              </div>
+              <div className="how-it-works-step-content">
+                <h3 className="how-it-works-step-title">4. Mise en route & SAV</h3>
+                <p className="how-it-works-step-text">Votre solution est opérationnelle. Nous restons à vos côtés pour le SAV, les mises à jour et les évolutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section id="tarifs" className="pricing">
         <div className="container">
@@ -473,6 +698,7 @@ const LandingPage = () => {
             <p className="pricing-subtitle">
               Des <strong>offres sur mesure</strong> selon vos besoins. 
               Tous nos devis sont <strong>gratuits</strong> et personnalisés.
+              Un <strong>dossier de financement</strong> (Oney) est possible pour payer en plusieurs fois.
             </p>
           </div>
           <div className="pricing-grid">
@@ -549,193 +775,54 @@ const LandingPage = () => {
           <div className="services-grid-section">
             <div className="services-grid-header">
               <h3>Nos Services Complets</h3>
-              <p>Découvrez tous nos services pour développer votre business</p>
+              <p>Les modules disponibles avec notre solution de caisse enregistreuse</p>
             </div>
-            <div className="services-grid-cards">
-              <div className="service-card hide-desktop">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="9" y1="13" x2="15" y2="13"/>
-                    <line x1="9" y1="17" x2="13" y2="17"/>
-                  </svg>
+            <div className="services-grid-cards pos-modules-grid">
+              {posModules.slice(0, MAIN_MODULES_COUNT).map((name, i) => {
+                const Icon = posModuleIcons[i]
+                return (
+                  <div key={i} className="pos-module-card">
+                    <div className="pos-module-icon-wrap">
+                      {Icon ? <Icon width={32} height={32} /> : null}
+                    </div>
+                    <span className="pos-module-title-btn">{name}</span>
+                  </div>
+                )
+              })}
+            </div>
+            <div className="pos-more-options-accordion">
+              <button
+                type="button"
+                className={`pos-more-options-toggle ${moreOptionsOpen ? 'is-open' : ''}`}
+                onClick={() => setMoreOptionsOpen((o) => !o)}
+                aria-expanded={moreOptionsOpen}
+              >
+                <span className="pos-more-options-toggle-text">Plus d'options</span>
+                <svg className="pos-more-options-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              {moreOptionsOpen && (
+                <div className="services-grid-cards pos-modules-grid pos-more-options-grid">
+                  {posModules.slice(MAIN_MODULES_COUNT).map((name, i) => {
+                    const idx = MAIN_MODULES_COUNT + i
+                    const Icon = posModuleIcons[idx]
+                    return (
+                      <div key={idx} className="pos-module-card">
+                        <div className="pos-module-icon-wrap">
+                          {Icon ? <Icon width={32} height={32} /> : null}
+                        </div>
+                        <span className="pos-module-title-btn">{name}</span>
+                      </div>
+                    )
+                  })}
                 </div>
-                <h4>Catalogues</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <line x1="9" y1="3" x2="9" y2="21"/>
-                    <line x1="3" y1="9" x2="21" y2="9"/>
-                  </svg>
-                </div>
-                <h4>Affiches</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="8" y1="13" x2="16" y2="13"/>
-                  </svg>
-                </div>
-                <h4>Flyers</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <path d="M9 9h6v6H9z"/>
-                    <circle cx="8" cy="8" r="1"/>
-                    <circle cx="16" cy="8" r="1"/>
-                    <circle cx="8" cy="16" r="1"/>
-                    <circle cx="16" cy="16" r="1"/>
-                  </svg>
-                </div>
-                <h4>Logo</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M8 12h8M12 8v8"/>
-                    <path d="M7 17c1.5-1 3.5-1.5 5-1.5s3.5.5 5 1.5"/>
-                  </svg>
-                </div>
-                <h4>Gestion des réseaux sociaux</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="2" y1="12" x2="22" y2="12"/>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                  </svg>
-                </div>
-                <h4>Site Web</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="9" cy="21" r="1"/>
-                    <circle cx="20" cy="21" r="1"/>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                  </svg>
-                </div>
-                <h4>E-commerce</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                    <line x1="12" y1="18" x2="12.01" y2="18"/>
-                  </svg>
-                </div>
-                <h4>Application Mobile</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" rx="2"/>
-                    <rect x="5" y="5" width="4" height="4" fill="currentColor"/>
-                    <rect x="15" y="5" width="4" height="4" fill="currentColor"/>
-                    <rect x="5" y="15" width="4" height="4" fill="currentColor"/>
-                    <rect x="11" y="11" width="2" height="2" fill="currentColor"/>
-                    <rect x="14" y="11" width="1" height="1" fill="currentColor"/>
-                    <rect x="11" y="14" width="1" height="1" fill="currentColor"/>
-                    <rect x="13" y="14" width="2" height="2" fill="currentColor"/>
-                    <rect x="16" y="13" width="1" height="1" fill="currentColor"/>
-                    <rect x="18" y="13" width="1" height="1" fill="currentColor"/>
-                    <rect x="16" y="16" width="2" height="1" fill="currentColor"/>
-                    <rect x="19" y="16" width="1" height="1" fill="currentColor"/>
-                  </svg>
-                </div>
-                <h4>Commande par QR Code</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                    <line x1="8" y1="21" x2="16" y2="21"/>
-                    <line x1="12" y1="17" x2="12" y2="21"/>
-                  </svg>
-                </div>
-                <h4>Borne de Commande</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-                    <line x1="1" y1="10" x2="23" y2="10"/>
-                  </svg>
-                </div>
-                <h4>Cashless</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="23 4 23 10 17 10"/>
-                    <polyline points="1 20 1 14 7 14"/>
-                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
-                  </svg>
-                </div>
-                <h4>Synchronisation Caisse & Web</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <path d="M16 10a4 4 0 0 1-8 0"/>
-                  </svg>
-                </div>
-                <h4>Gestion de Stock</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="18" y1="20" x2="18" y2="10"/>
-                    <line x1="12" y1="20" x2="12" y2="4"/>
-                    <line x1="6" y1="20" x2="6" y2="14"/>
-                  </svg>
-                </div>
-                <h4>Reporting</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-                    <line x1="1" y1="10" x2="23" y2="10"/>
-                  </svg>
-                </div>
-                <h4>TPE Ingenico</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                    <line x1="12" y1="18" x2="12.01" y2="18"/>
-                    <rect x="7" y="6" width="10" height="8" rx="1"/>
-                  </svg>
-                </div>
-                <h4>PAD</h4>
-              </div>
-              <div className="service-card">
-                <div className="service-card-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                    <path d="M2 17l10 5 10-5"/>
-                    <path d="M2 12l10 5 10-5"/>
-                  </svg>
-                </div>
-                <h4>Stop Trottoir</h4>
-              </div>
+              )}
             </div>
             <div className="services-grid-cta">
-            <p>Besoin d'une <strong>solution sur mesure</strong> ?</p>
-            <button className="btn btn-secondary" onClick={scrollToContact}>Contactez-nous pour un devis gratuit</button>
+              <p>Besoin d'une <strong>solution sur mesure</strong> ?</p>
+              <button className="btn btn-secondary" onClick={scrollToContact}>Contactez-nous pour un devis gratuit</button>
+              <p className="services-grid-cta-note">Un dossier de financement (Oney) est possible pour étaler vos paiements.</p>
             </div>
           </div>
         </div>
@@ -950,6 +1037,7 @@ const LandingPage = () => {
                   Pour obtenir un <strong>devis gratuit</strong>, contactez-nous par email, téléphone ou via notre 
                   formulaire de contact. Nous vous répondons sous <strong>48h</strong> avec un devis détaillé 
                   adapté à vos besoins. Vous pouvez également nous contacter directement via WhatsApp.
+                  Un <strong>dossier de financement</strong> (Oney) est possible pour payer en plusieurs fois.
                 </p>
               </div>
             </div>

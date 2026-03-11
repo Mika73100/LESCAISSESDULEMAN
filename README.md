@@ -175,7 +175,7 @@ La page est entièrement responsive et s'adapte à tous les écrans :
 
 - 📧 **Email** : contact@lescaissesduleman.ch
 - 📞 **Téléphone** : +33 6 07 53 56 27
-- 📍 **Localisation** : Région du Léman, Genève
+- 📍 **Localisation** : Aix-les-Bains > Genève
 
 ## 🔗 Réseaux sociaux
 
