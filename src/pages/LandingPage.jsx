@@ -36,12 +36,15 @@ const LandingPage = () => {
     '/assets/imgs/sunmi/sunmi2.png',
     '/assets/imgs/sunmi/sunmi3.png',
     '/assets/imgs/sunmi/tpe.png',
-    '/assets/imgs/sunmi/tpe2.png'
+    '/assets/imgs/sunmi/tpe2.png',
+    '/assets/imgs/sunmi/sunmitpe.png'
   ]
 
   const epsonImages = [
     '/assets/imgs/epson/caisse-epson.webp',
     '/assets/imgs/epson/caisse-epson-ecran.webp',
+    '/assets/imgs/epson/30958-productpicture-lores-ix-tm-m30ii-s_main.png',
+    '/assets/imgs/epson/Img_27934693.png',
     '/assets/imgs/epson/shopping.webp',
     '/assets/imgs/epson/36476-productpicture-lores-int-int-tm-p20ii_main.webp',
     '/assets/imgs/epson/epson-tm-p20ii-8-pts-mm-203-dpi-usb-c-bt-couleur-blanc-inclus-cable-usb-usb-c.jpg',
@@ -315,13 +318,13 @@ const LandingPage = () => {
               <span>Devis gratuit disponible sous 48h</span>
             </div>
             <h1 className="hero-title">
-              <span className="hero-title-black">Développez votre business</span>{' '}
-              <span className="hero-title-red">avec nos solutions digitales</span>
+              <span className="hero-title-black">Caisse enregistreuse en Suisse et en France</span>{' '}
+              <span className="hero-title-red">et solutions POS pour commerces et restaurants</span>
             </h1>
             <p className="hero-description">
-              <strong>Développement web</strong>, <strong>e-commerce</strong>, <strong>graphisme</strong>, <strong>caisses enregistreuses</strong> et <strong>gestion des réseaux sociaux</strong>. 
-              Nous vous accompagnons de <strong>l'idée à la production</strong> avec un <strong>suivi complet</strong> de votre projet. 
-              <strong>Synchronisez votre caisse avec votre site web</strong> pour une <strong>gestion unifiée</strong> de vos ventes en ligne et en magasin.
+              <strong>Installation de caisse enregistreuse</strong>, <strong>systeme POS</strong>, <strong>logiciel de caisse</strong> et <strong>terminal de paiement</strong> pour votre point de vente. 
+              Nous accompagnons les commerces et restaurants en <strong>Suisse et en France</strong>, de <strong>Geneve a Lausanne</strong> et d'<strong>Annecy a Chambery</strong>, de l'etude a la mise en service. 
+              <strong>Synchronisez votre caisse avec votre site web</strong> pour une <strong>gestion unifiee</strong> de vos ventes en ligne et en magasin.
             </p>
             <div className="hero-metrics">
               <div className="hero-metric">
@@ -547,7 +550,7 @@ const LandingPage = () => {
                 <img src="/assets/icons/expo.png" alt="Expo" className="technology-logo" />
               </div>
               <div className="technology-item">
-                <img src="/assets/icons/epson.png" alt="Epson" className="technology-logo" />
+                <img src="/assets/icons/Epson-Logo.png" alt="Epson" className="technology-logo" />
               </div>
               <div className="technology-item">
                 <img src="/assets/icons/sunmi.png" alt="Sunmi" className="technology-logo" />
@@ -629,7 +632,7 @@ const LandingPage = () => {
                     <img 
                       src={image} 
                       alt={`Produit Epson ${index + 1}`}
-                      className="epson-gallery-image"
+                      className={`epson-gallery-image ${image.includes('Img_27934693.png') ? 'epson-gallery-image--featured' : ''}`}
                     />
                   </div>
                 </div>
@@ -1097,6 +1100,17 @@ const LandingPage = () => {
                   <img src="/assets/icons/instagram.png" alt="Instagram" />
                 </a>
               </div>
+            </div>
+            <div className="footer-section">
+              <h4>Partenaires</h4>
+              <ul>
+                <li><a href="https://kwisatz-logiciel-caisse.fr/" target="_blank" rel="noopener noreferrer">KWISATZ</a></li>
+                <li><a href="https://www.sunmi.com/en/" target="_blank" rel="noopener noreferrer">SUNMI</a></li>
+                <li><a href="https://www.planet-monetic.fr/" target="_blank" rel="noopener noreferrer">Planet Monetic</a></li>
+                <li><a href="https://my.contabo.com/" target="_blank" rel="noopener noreferrer">Contabo</a></li>
+                <li><a href="https://blog.bluestarinc.com/en-gb" target="_blank" rel="noopener noreferrer">BlueStar Vertical 360</a></li>
+                <li><a href="https://www.imin.com/" target="_blank" rel="noopener noreferrer">iMin</a></li>
+              </ul>
             </div>
           </div>
           <div className="footer-bottom">

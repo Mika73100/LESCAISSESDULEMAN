@@ -1240,6 +1240,12 @@
   padding: 1.5rem;
 }
 
+.epson-gallery-image--featured {
+  object-fit: cover;
+  padding: 0.5rem;
+  transform: scale(1.06);
+}
+
 // Comment ça marche ? — Timeline 4 étapes
 .how-it-works {
   padding: 4rem 0;
