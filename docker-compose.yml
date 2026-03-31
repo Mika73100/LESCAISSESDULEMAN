@@ -3,7 +3,7 @@
 
 services:
   web:
-    image: michael73100/lescaissesduleman:latest
+    image: michael73100/lescaissesduleman
     networks:
       tipi_main_network:
         gw_priority: 1
